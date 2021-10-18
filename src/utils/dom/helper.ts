@@ -2,7 +2,7 @@
 import Vue, { VueConstructor } from 'vue';
 
 export const setTitle = (title) => {
-  document.title = `Werkules - ${title}`;
+  document.title = `TubesPBBO - ${title}`;
 };
 
 export const currency = (value) => value
