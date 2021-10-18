@@ -1,0 +1,1836 @@
+{
+  "modules": {
+    "auth": {
+      "signIn": {
+        "name": "Anmelden",
+        "username": "Benutzername",
+        "password": "Passwort"
+      },
+      "forgotPassword": {
+        "name": "Passwort vergessen"
+      },
+      "resetPassword": {
+        "name": "Passwort zurücksetzen"
+      }
+    },
+    "dashboard": {
+      "name": "Dashboard",
+      "description": "Das ist das Dashboard"
+    },
+    "personal": "Persönlich",
+    "employees": {
+      "name": "Mitarbeiter",
+      "description": "In diesem Modul werden die Mitarbeiter verwaltet.",
+      "headers": {
+        "id": "ID",
+        "firstName": "Vorname",
+        "lastName": "Nachname",
+        "entryDate": "Eintrittsdatum",
+        "exitDate": "Austrittsdatum",
+        "activity": "Berufsbezeichnung",
+        "comment": "Kommentar",
+        "actions": "Aktion"
+      },
+      "createFields": {
+        "firstName": "Vorname",
+        "lastName": "Nachname",
+        "address": "Adresse",
+        "dateOfBirth": "Geburtsdatum",
+        "gender": "Geschlecht",
+        "entryDate": "Eintrittsdatum",
+        "weeklyHours": "Wöchentliche Arbeitszeit",
+        "activity": "Berufsbezeichnung",
+        "annualVacationCredit": "Jährlicher Urlaubsanspruch",
+        "roleId": "Position"
+      },
+      "editFields": {
+        "name": "Edit",
+        "description": "Beschreibung"
+      },
+      "detailFields": {
+        "name": "Details",
+        "description": "Details module enables you to manage user details in your company."
+      },
+      "tabsHeader": {
+        "personalInformation": "Persönliche Informationen",
+        "employment": "Anstellung",
+        "taxData": "Steuerdaten",
+        "socialInsurance": "Sozialversicherung",
+        "document": "Dokumentieren",
+        "authentication": "Authentifizierung",
+        "permissions": "Berechtigungen",
+        "others": "Andere"
+      },
+
+      "tabs": {
+        "workerTabs": {
+          "all": "Alle",
+          "constructionWorkers": "Baustelle",
+          "officeWorkers": "Büro"
+        },
+        "personalInformation": {
+          "email": "Email",
+          "firstName": "Vorname",
+          "lastName": "Nachname",
+          "address": "Adresse",
+          "dateOfBirth": "Geburtsdatum",
+          "contryCode": "Landesvorwahl",
+          "phoneNumber": "Telefonnummer",
+          "gender": "Geschlecht",
+          "maritalStatus": "Familienstand",
+          "countryOfBirth": "Geburtsland",
+          "natonality": "Staatsangehörigkeit",
+          "personnelNumber": "Personal Nummer",
+          "idCardNumber": "ID Kartennummer",
+          "idCardExpDate": "Ablaufdatum des Ausweises",
+          "soka": "SOKA BAU Nummer",
+          "iban": "IBAN",
+          "suc": "SUC"
+        },
+        "taxData": {
+          "identification": "Identifikationsnummer",
+          "taxOfficeNumber": "Finanzamtsnummer",
+          "taxBrackerFactor": "Steuerklassenfaktor",
+          "childAllowance": "Kindergeld",
+          "religion": "Religion"
+        },
+        "socialInsurance": {
+          "socialSecurity": "Sozialversicherungsnummer",
+          "healthInsurance": "Krankenversicherungsnummer",
+          "parentingCommunities": "Elterngemeinschaft"
+        },
+        "document": {
+          "employmentContract": "Arbeitsvertrag",
+          "driverLicense": "Führerschein",
+          "personalRecords": "Persönliche Aufzeichnungen",
+          "correspondence": "Korrespondenz",
+          "identificationCard": "Ausweis",
+          "others": "Andere"
+        },
+        "employment": {
+          "entryDate": "Eintrittsdatum",
+          "trialPeriodEndDate": "Ende der Probezeit",
+          "leavingDate": "Austrittsdatum",
+          "activity": "Tätigkeit",
+          "weeklyHours": "Wöchentliche Arbeitszeit",
+          "annualVacationCredit": "Jährlicher Urlaubsanspruch",
+          "carryOverVacationBeforeEntryYear": "Übertrag Urlaub des vorherigen AG Jahres vor Eintrittsjahr",
+          "carryOverVacationFromEntryYear": "Übertrag Urlaub des vorherigen AG Eintrittsjahres",
+          "hourlyWage": "Gehalt/Stundenlohn"
+        },
+        "authentication": {
+          "username": "Nutzername",
+          "password": "Passwort",
+          "confirm": "Kennwort bestätigen",
+          "title": "Willkommen bei Werkules!",
+          "qrCode": "Bitte scanne den QR-Code oberhalb mit deiner Handkamera und gib deine Login-Daten (siehe unten) ein, um dich in der App einzuloggen.",
+          "or": "ODER",
+          "optional": "Öffne den folgenden Link im Browser auf Deinem Handy: http://mobile.dev.werkules.systeric.com/en und logge dich anschließend mit Deinen Daten(siehe unten)ein.",
+          "loginData": "Login-Daten",
+          "termsAccepted": "Bestätigte Nutzungsbedingungen"
+        },
+        "others": {
+          "term": "Akzeptierte Nutzungsbedingungen",
+          "comments": "Kommentar"
+        }
+      }
+    },
+    "finances": {
+      "name": "Finanzen",
+      "invoices": {
+        "name": "Eingangsrechnungen",
+        "description": "Hier verwaltest du alle Eingangsrechnungen Deines Unternehmens",
+        "tabs": {
+          "toBeReleased": "Freigegeben werden",
+          "approved": "Zugelassen",
+          "paid": "Bezahlt"
+        },
+        "headers": {
+          "id": "ID",
+          "status": "Status",
+          "projectNumber": "Projektnummer",
+          "address": "Projektadresse",
+          "client": "Auftraggeber",
+          "invoiceDate": "Rechnungsdatum",
+          "dueDate": "Fälligkeitsdatum",
+          "action": "Aktion"
+        },
+        "createFields": {
+          "name": "Name",
+          "invoiceDate": "Rechnungsdatum",
+          "dueDate": "Frist",
+          "costType": "Kostenstelle",
+          "subcontractor": "Nachunternehmer",
+          "description": "Beschreibung",
+          "previousBills": "Vorherige Rechnungen",
+          "supplier": "Lieferant",
+          "designation": "Bezeichnung",
+          "bookingOn": "Buchungsdatum",
+          "projectNumber": "Projektnummer",
+          "constructionProjectTitle": "Projektname",
+          "projectAddress": "Projektadresse",
+          "client": "Auftraggeber",
+          "clientAddress": "Adresse Auftraggeber",
+          "invoiceAmount": "Rechnungsbetrag",
+          "toBeReleasedBy": "Freigegeben von",
+          "roleToBeReleasedBy": "Freizugebende Rolle",
+          "comment": "Kommentar",
+          "postedOn": "Erstellt am",
+          "postedBy": "Erstellt von"
+        },
+        "editFields": {
+          "activityType": "Vorgangsart",
+          "employee": "Mitarbeiter"
+        },
+        "detailFields": {
+          "activityType": "Vorgangsart",
+          "employee": "Mitarbeiter"
+        }
+      }
+    },
+    "controlling": {
+      "name": "Steuerung",
+      "cost": {
+        "name": "Kosten",
+        "description": "Neue Lagerkosten werden hinzugefügt, wenn das Angebot angenommen wird",
+        "tab": {
+          "storageCost": "Lagerkosten",
+          "staffCost": "Mitarbeiterkosten",
+          "materialCost": "Materialkosten",
+          "subcontractorCost": "Nachunternehmerkosten"
+        },
+        "storage": {
+          "headers": {
+            "id": "Projektnummer",
+            "title": "Projektname",
+            "address": "Projektadresse",
+            "client": {
+              "name": "Klient",
+              "address": "Kundenadresse"
+            },
+            "lead": "Projektleitung",
+            "storageCost": "Lagerkosten",
+            "status": "Status",
+            "action": "Aktion",
+            "createdAt": "Erstellt am",
+            "createdBy": "Erstellt von"
+          },
+          "emptyTable": "Es wurde kein Projektangebot angenommen",
+          "recalculate": {
+            "title": "neu berechnen",
+            "confirmation": {
+              "title": "Bestätigen neu berechnen",
+              "text": "Möchten Sie die Speicherkosten wirklich neu berechnen?",
+              "oldValue": "Alte Gesamtspeicherkosten",
+              "newValue": "Neue Gesamtspeicherkosten"
+            }
+          }
+        },
+        "staff": {
+          "total": "Gesamtstunden",
+          "headers": {
+            "projectNo": "Projektnummer",
+            "address": "Projektadresse",
+            "date": "Datum",
+            "firstName": "Vorname",
+            "lastName": "Nachname",
+            "startTime": "Startzeit",
+            "endTime": "Endzeit",
+            "workingTime": "Arbeitszeit",
+            "total": "Gesamte",
+            "comment": "Kommentar",
+            "action": "Aktion"
+          },
+          "dialog": {
+            "activityType": "Vorgangsart",
+            "accessType": "Zugang",
+            "accessName": "Zugangsname",
+            "project": {
+              "number": "Projektnummer",
+              "title": "Projekttitel",
+              "address": "Projektadresse",
+              "client": {
+                "name": "Auftraggeber",
+                "address": "Adresse"
+              },
+              "lead": "Bauleiter"
+            },
+            "date": "Datum",
+            "time": {
+              "start": "Startzeit App",
+              "end": "Endzeit App",
+              "break": "Pausenzeit",
+              "total": "Gesamte Arbeitszeit",
+              "minutes": "Minuten",
+              "hours": "Stunden",
+              "rounded": {
+                "start": "Gerundete Startzeit",
+                "end": "Gerundete Endzeit"
+              },
+              "distance": {
+                "start": "Distanz Startzeit zum Projekt",
+                "end": "Distanz Endzeit zum Projekt"
+              }
+            },
+            "deviation": "Abweichungen überprüfen",
+            "approved": "Genehmigt",
+            "comment": "Kommentar",
+            "createdAt": "Erstellt am",
+            "createdBy": "Erstellt von"
+          }
+        },
+        "material": {
+          "detail": "Detail Materialkosten",
+          "headers": {
+            "projectNo": "Projektnummer",
+            "address": "Projektadresse",
+            "client": "Auftraggeber",
+            "date": "Datum",
+            "costType": "Kostenart",
+            "supplier": "Anbieter",
+            "description": "Beschreibung",
+            "total": "Gesamt",
+            "action": "Aktion"
+          },
+          "dialog": {
+            "projectNumber": "Projektnummer",
+            "projectLead": "Bauleiter",
+            "projectTitle": "Projekttitel",
+            "projectAddress": "Projektadresse",
+            "client": "Auftraggeber",
+            "clientAddress": "Kundenadresse",
+            "date": "Datum",
+            "costType": "Kostenart",
+            "supplier": "Anbieter",
+            "description": "Beschreibung",
+            "invoiceSum": "Summe",
+            "invoiceUrl": "Rechnungsdatei",
+            "checkEstimateCost": "Geschätzte Kosten prüfen",
+            "comment": "Kommentar",
+            "createdAt": "Erstellt am",
+            "createdBy": "Erstellt von"
+          }
+        },
+        "subcontractor": {
+          "detail": "Detail Nachunternehmerkosten",
+          "headers": {
+            "projectNo": "Projektnummer",
+            "address": "Projektadresse",
+            "client": "Auftraggeber",
+            "date": "Datum",
+            "costType": "Kostenart",
+            "supplier": "Anbieter",
+            "description": "Beschreibung",
+            "total": "Gesamt",
+            "action": "Aktion"
+          },
+          "dialog": {
+            "projectNumber": "Projektnummer",
+            "projectLead": "Bauleiter",
+            "projectTitle": "Projekttitel",
+            "projectAddress": "Projektadresse",
+            "client": "Auftraggeber",
+            "clientAddress": "Kundenadresse",
+            "date": "Datum",
+            "costType": "Kostenart",
+            "subcontractor": "Subunternehmer",
+            "description": "Beschreibung",
+            "invoiceSum": "Summe",
+            "invoiceUrl": "Rechnungsdatei",
+            "checkEstimateCost": "Geschätzte Kosten prüfen",
+            "comment": "Kommentar",
+            "createdAt": "Erstellt am",
+            "createdBy": "Erstellt von"
+          }
+        }
+      }
+    },
+    "subcontractor": {
+      "name": "Nachunternehmer",
+      "subcontractors": {
+        "name": "Nachunternehmer",
+        "description": "In diesem Modul werden alle Nachunternehmer verwaltet.",
+        "headers": {
+          "company": "Unternehmen",
+          "trade": "Vorgänge",
+          "priceList": "Preisliste",
+          "employeeNumber": "Mitarbeiternummer",
+          "active": "Status",
+          "comment": "Kommentar",
+          "action": "Aktion"
+        },
+        "createFields": {
+          "company": "Unternehmen",
+          "trade": "Vorgänge",
+          "priceList": "Preisliste",
+          "employeeNumber": "Mitarbeiternummer",
+          "exemptionValidUntil": "Freistellungsbescheinigung nach § 48b gültig bis",
+          "healthInsuranceValidUntil": "Unbedenklichkeitsbescheinigung der Krankenkasse gültig bis",
+          "publicLiabilityValidUntil": "Betriebshaftpflicht-Zertifikat gültig bis",
+          "bgBauValidUntil": "BG Bau Unbedenklichkeitsbescheinigung gültig bis",
+          "employeeListFrom": "Mitarbeiterliste mit Sozialversicherungsnummer aus",
+          "annualContractSigned": "Jahresvertrag unterschrieben",
+          "businessRegistration": "Gewerbeanmeldung und Handelsregister vorhanden",
+          "sokaBau": "SOKA-Bau Bestätigung liegt vor",
+          "craftCard": "Handwerkskarte ist vorhanden",
+          "copiesOfEmployeeId": "Kopien des Mitarbeiterausweises sind vorhanden",
+          "registrationOfEmployees": "Registrierung von Mitarbeitern ist möglich",
+          "active": "Aktiv",
+          "comment": "Kommentar"
+        },
+        "editFields": {
+          "company": "Unternehmen",
+          "trade": "Vorgänge",
+          "priceList": "Preisliste",
+          "employeeNumber": "Mitarbeiternummer",
+          "exemptionValidUntil": "Freistellungsbescheinigung nach § 48b gültig bis",
+          "healthInsuranceValidUntil": "Unbedenklichkeitsbescheinigung der Krankenkasse gültig bis",
+          "publicLiabilityValidUntil": "Betriebshaftpflicht-Zertifikat gültig bis",
+          "bgBauValidUntil": "BG Bau Unbedenklichkeitsbescheinigung gültig bis",
+          "employeeListFrom": "Mitarbeiterliste mit Sozialversicherungsnummer aus",
+          "annualContractSigned": "Jahresvertrag unterschrieben",
+          "businessRegistration": "Gewerbeanmeldung und Handelsregister vorhanden",
+          "sokaBau": "SOKA-Bau Bestätigung liegt vor",
+          "craftCard": "Handwerkskarte ist vorhanden",
+          "copiesOfEmployeeId": "Kopien des Mitarbeiterausweises sind vorhanden",
+          "registrationOfEmployees": "Registrierung von Mitarbeitern ist möglich",
+          "active": "Aktiv",
+          "comment": "Kommentar"
+        },
+        "detailFields": {
+          "company": "Unternehmen",
+          "trade": "Vorgänge",
+          "priceList": "Preisliste",
+          "employeeNumber": "Mitarbeiternummer",
+          "exemptionValidUntil": "Freistellungsbescheinigung nach § 48b gültig bis",
+          "healthInsuranceValidUntil": "Unbedenklichkeitsbescheinigung der Krankenkasse gültig bis",
+          "publicLiabilityValidUntil": "Betriebshaftpflicht-Zertifikat gültig bis",
+          "bgBauValidUntil": "BG Bau Unbedenklichkeitsbescheinigung gültig bis",
+          "employeeListFrom": "Mitarbeiterliste mit Sozialversicherungsnummer aus",
+          "annualContractSigned": "Jahresvertrag unterschrieben",
+          "businessRegistration": "Gewerbeanmeldung und Handelsregister vorhanden",
+          "sokaBau": "SOKA-Bau Bestätigung liegt vor",
+          "craftCard": "Handwerkskarte ist vorhanden",
+          "copiesOfEmployeeId": "Kopien des Mitarbeiterausweises sind vorhanden",
+          "registrationOfEmployees": "Registrierung von Mitarbeitern ist möglich",
+          "active": "Aktiv",
+          "comment": "Kommentar",
+          "createdAt": "Erstellt am",
+          "createdBy": "Erstellt von"
+        }
+      },
+      "appAccess": {
+        "name": "App Zugang",
+        "description": "Hier kann man die Zugänge für die Mobile App verwalten."
+      }
+    },
+    "contact": {
+      "name": "Kontakt",
+      "architects": {
+        "name": "Architekten",
+        "description": "Hier kann man alle Architekten verwalten.",
+        "headers": {
+          "id": "ID",
+          "name": "Name",
+          "availableFrom": "Verfügbar ab",
+          "availableTo": "Verfügbar für",
+          "availableTime": "Verfügbare Zeit",
+          "actions": "Aktion"
+        },
+        "createFields": {
+          "companyName": "Name der Firma",
+          "address": "Die Anschrift",
+          "contactPerson": "Kontaktpersonen",
+          "title": "Titel",
+          "firstName": "Vorname",
+          "lastName": "Nachname",
+          "mobileNumber": "Handy Nummer",
+          "email": "Email",
+          "comment": "Kommentar"
+        },
+        "tabsHeader": {
+          "contact": "Kontakte",
+          "contactDetails": "Kontaktdetails",
+          "contactPerson": "Kontaktpersonen",
+          "otherDetails": "Andere Details"
+        },
+        "tabs": {
+          "contacts": {
+            "companyName": "Name der Firma",
+            "companyEmail": "Firmen E-Mail",
+            "website": "Webseite",
+            "telephone": "Telefon",
+            "fax": "Fax",
+            "openingHours": "Öffnungszeiten",
+            "openingDayFrom": "Von (Tage)",
+            "openingDayTo": "Zu (Tage)",
+            "openingHourFrom": "Öffnungszeiten von",
+            "openingHourTo": "Öffnungszeiten Zu",
+            "firstMeeting": "Erstes Treffen",
+            "createdBy": "Erstellt Von",
+            "createdAt": "Erstellt am"
+          },
+          "contactDetails": {
+            "address": "Die Anschrift",
+            "street": "Straße",
+            "addressLine1": "Adresszeile 1 (optional)",
+            "addressLine2": "Adresszeile 2 (optional)",
+            "postalCode": "Postleitzahl",
+            "city": "Stadt",
+            "country": "Land"
+          },
+          "contactPerson": {
+            "dialogTitle": "Gesprächspartner",
+            "headers": {
+              "firstName": "Vorname",
+              "lastName": "Nachname",
+              "availability": "Verfügbarkeit",
+              "mobileNumber": "Handy Nummer",
+              "actions": "Aktionen"
+            },
+            "vcard": "V-Card",
+            "title": "Titel",
+            "firstName": "Vorname",
+            "lastName": "Nachname",
+            "position": "Position",
+            "telephone": "Telefon",
+            "dob": "Geburtsdatum",
+            "mobileNumber": "Handy Nummer",
+            "fax": "Fax",
+            "email": "E-mail",
+            "openingDayFrom": "Von (Tage)",
+            "openingDayTo": "Zu (Tage)",
+            "openingHourFrom": "Öffnungszeiten von",
+            "openingHourTo": "Öffnungszeiten zu",
+            "projectNumber": "Projektnummer"
+          },
+          "otherDetails": {
+            "documentUpload": "Dokumenten Upload",
+            "comment": "Kommentar"
+          }
+        }
+      },
+      "clients": {
+        "name": "Auftraggeber",
+        "description": "Hier kann man alle Auftraggeber verwalten.",
+        "headers": {
+          "name": "Name",
+          "email": "Email",
+          "availableFrom": "Verfügbar ab",
+          "availableTo": "Verfügbar für",
+          "availableTime": "Verfügbare Zeit",
+          "actions": "Aktionen"
+        },
+        "ribbon": {
+          "all": "Alle",
+          "company": "Firma",
+          "personal": "Persönlich"
+        },
+        "tabHeader": {
+          "info": "Die Info",
+          "contact": "Kontakte",
+          "contactDetails": "Kontaktdetails",
+          "contactPerson": "Kontaktpersonen",
+          "specialCondition": "Sonderbedingung",
+          "otherDetails": "Andere Details",
+          "statistic": "Statistik"
+        },
+        "createFields": {
+          "company": {
+            "companyName": "Name der Firma",
+            "address": "Die Anschrift",
+            "contactPerson": "Kontaktpersonen",
+            "title": "Titel",
+            "firstName": "Vorname",
+            "lastName": "Nachname",
+            "mobileNumber": "Handy Nummer",
+            "email": "Email",
+            "comment": "Kommentar"
+          },
+          "personal": {
+            "address": "Die Anschrift",
+            "title": "Titel",
+            "firstName": "Vorname",
+            "lastName": "Nachname",
+            "mobileNumber": "Handy Nummer",
+            "email": "Email"
+          }
+        }
+      },
+      "supplier": {
+        "name": "Zulieferer",
+        "description": "Hier kannst Du alle Zulieferer Deines Unternehmens verwalten.",
+        "headers": {
+          "id": "ID",
+          "name": "Name",
+          "mobilePhone": "Handynummer",
+          "email": "E-Mail",
+          "address": "Adresse",
+          "paymentMethod": "Zahlungsmethode",
+          "comment": "Kommentar",
+          "action": "Zuständigkeit"
+        },
+        "createFields": {
+          "name": "Name",
+          "mobileNumber": "Handynummer",
+          "email": "E-Mail",
+          "address": "Adresse",
+          "comment": "Kommentar"
+        },
+        "tabs": {
+          "contacts": {
+            "header": "Kontakt",
+            "name": "Name",
+            "email": "E-Mail",
+            "telephone": "Festnetznummer",
+            "mobileNumber": "Handynummer",
+            "fax": "Fax",
+            "website": "Webseite",
+            "createdBy": "Erstellt Von",
+            "createdAt": "Erstellt am"
+          },
+          "contactDetails": {
+            "header": "Kontaktdetails",
+            "street": "Adresse",
+            "house": "Hausnummer",
+            "addressLine1": "Adresszeile 1 (optional)",
+            "addressLine2": "Adresszeile 2 (optional)",
+            "postalCode": "Postleitzahl",
+            "city": "Stadt",
+            "country": "Land"
+          },
+          "paymentTerms": {
+            "header": "Zahlungsbedingungen",
+            "currency": "Währung",
+            "paymentMethod": "Zahlungsmethode",
+            "timePayment": "Zahlungsdatum",
+            "dueDate": "Fälligkeitsdatum",
+            "discount": "Kundenrabatt",
+            "cashDiscount": "Rabatt in %",
+            "daysDiscount": "Rabatt in Tagen",
+            "bank": "Bank",
+            "iban": "IBAN",
+            "bic": "BIC",
+            "taxNumber": "Steuernummer",
+            "comment": "Kommentar"
+          },
+          "statistics": {
+            "header": "Statistik",
+            "year": "Jahr",
+            "projects": "Projekte",
+            "lastYearCost": "Kosten vergangenes Jahr",
+            "lastYearRevenue": "Umsatz vergangenes Jahr",
+            "lastYearMargin": "Marge vergangenes Jahr",
+            "projectTitle": "Projektname",
+            "projectAddress": "Projektadresse",
+            "cost": "Kosten",
+            "revenue": "Umsatz",
+            "margin": "Marge"
+          },
+          "otherDetails": {
+            "header": "Weitere Details",
+            "documents": "Dokumente",
+            "comment": "Kommentar"
+          }
+        }
+      },
+      "subcontractor": {
+        "name": "Nachunternehmer",
+        "description": "Hier werden alle Nachunternehmer des Betriebs verwaltet.",
+        "headers": {
+          "id": "ID",
+          "name": "Name",
+          "mobilePhone": "Handynummer",
+          "email": "E-Mail",
+          "address": "Adresse",
+          "paymentMethod": "Zahlungsmethode",
+          "comment": "Kommentar",
+          "action": "Aktion"
+        },
+        "createFields": {
+          "name": "Name",
+          "mobileNumber": "Handynummer",
+          "email": "E-Mail",
+          "address": "Adresse",
+          "comment": "Kommentar"
+        },
+        "tabs": {
+          "contacts": {
+            "header": "Kontakt",
+            "name": "Name",
+            "email": "E-Mail",
+            "telephone": "Festnetznummer",
+            "mobileNumber": "Handynummer",
+            "fax": "Fax",
+            "website": "Webseite",
+            "numberOfEmployee": "Anzahl der Mitarbeiter",
+            "createdBy": "Erstellt Von",
+            "createdAt": "Erstellt am"
+          },
+          "paymentTerms": {
+            "header": "Zahlungsbedingungen",
+            "currency": "Währung",
+            "paymentMethod": "Zahlungsmethode",
+            "timePayment": "Zahlungsdatum",
+            "dueDate": "Fälligkeitsdatum",
+            "discount": "Kundenrabatt",
+            "cashDiscount": "Rabatt in %",
+            "daysDiscount": "Rabatt in Tagen",
+            "discountType": "Rabatt",
+            "scontoType": "Skonto",
+            "bank": "Bank",
+            "iban": "IBAN",
+            "bic": "BIC",
+            "taxNumber": "Steuernummer",
+            "comment": "Kommentar"
+          },
+          "contactDetails": {
+            "header": "Kontaktdetails",
+            "street": "Adresse",
+            "house": "Hausnummer",
+            "addressLine1": "Adresszeile 1 (optional)",
+            "addressLine2": "Adresszeile 2 (optional)",
+            "postalCode": "Postleitzahl",
+            "city": "Stadt",
+            "country": "Land"
+          },
+          "formalRequirement": {
+            "header": "Rechtliche Anforderungen",
+            "exemptionCertificateValidDate": "Freistellungsbescheinigung nach § 48b gültig bis",
+            "insuranceClearanceCertificateValidDate": "Krankenkasse Unbedenklichkeitsbescheinigung gültig bis",
+            "publicLiabilityCertificateValidDate": "Betriebshaftpflichtnachweis gültig bis",
+            "bauClearanceCertificateValidDate": "BG Bau Unbedenklichkeitsbescheinigung gültig bis",
+            "socialSecurityNumberAchieveDate": "Mitarbeiterliste mit Sozialversicherungsnummer vom",
+            "annualContractSigned": "Jahresvertrag unterschrieben",
+            "businessRegistrationAvailable": "Gewerbeanmeldung und Handelsregister liegt vor",
+            "sokaBauConfirmationAvailable": "SOKA-Bau Bestätigung liegt vor",
+            "craftCardAvailable": "Handwerkskarte liegt vor",
+            "copiesEmployeeIdAvailable": "Ausweiskopien der Mitarbeiter liegen vor",
+            "registrationEmployeeAvailable": "Anmeldung der Mitarbeiter liegen vor",
+            "isActive": "Aktiv"
+          },
+          "otherDetails": {
+            "header": "Weitere Details",
+            "documents": "Dokumente",
+            "comment": "Kommentar",
+            "uploadedBy": "Hochgeladen von",
+            "uploadedDateTime": "Hochgeladen um"
+          },
+          "appAccess": {
+            "headers": {
+              "header": "Mitarbeitere",
+              "employeeName": "Mitarbeitername",
+              "activeStatus": "Aktivitätsstatus",
+              "actions": "Aktion"
+            },
+            "employeeName": "Mitarbeitername",
+            "username": "Benutzername",
+            "password": "Passwort",
+            "active": "App Zugang erteilen",
+            "showIn": "In Nachunternehmerplanung anzeigen",
+            "residencePermit": "Aufenthaltsgenehmigung",
+            "expirationDate": "Ablaufdatum"
+          }
+        }
+      }
+    },
+    "inventories": {
+      "name": "Inventar",
+      "apparel": {
+        "name": "Kleidung",
+        "description": "Lager Bekleidung",
+        "employeeType": "Mitarbeitertyp",
+        "headers": {
+          "name": "Name",
+          "annualQty": "Jährliche Menge pro Mitarbeiter",
+          "action": "Aktion"
+        },
+        "createFields": {
+          "create": "Bekleidung erstellen",
+          "name": "Name",
+          "annualQty": "Jährliche Menge pro Mitarbeiter",
+          "sizes": "Größen",
+          "size": "Größe",
+          "sku": "SKU",
+          "unitPrice": "Stückpreis",
+          "minStock": "Mindestbestand"
+        },
+        "editFields": {
+          "edit": "Bekleidung bearbeiten"
+        },
+        "export": {
+          "employee": "Mitarbeiter",
+          "exportType": "Exporttyp",
+          "year": "Jahr"
+        },
+        "comment": "Kommentar"
+      },
+      "apparelProcess": {
+        "name": "Vorgänge",
+        "ribbon": {
+          "input": "Eingang",
+          "output": "Ausgabe"
+        },
+        "headers": {
+          "employeeType": "Mitarbeitertyp",
+          "employee": "Mitarbeiter",
+          "date": "Datum"
+        },
+        "createFields": {
+          "activityType": "Vorgangsart",
+          "employeeType": "Mitarbeitertyp",
+          "employee": "Mitarbeiter",
+          "date": "Datum"
+        }
+      },
+      "vehicles": {
+        "name": "Fahrzeuge",
+        "overview": {
+          "description": "In diesem Modul werden alle Fahrzeuge verwaltet.",
+          "name": "Fahrzeuge",
+          "headers": {
+            "id": "ID",
+            "mark": "Kennzeichen",
+            "isActive": "Status",
+            "kilometer": "Kilometer",
+            "actions": "Aktion"
+          },
+          "createFields": {
+            "mark": "Kennzeichen",
+            "isActive": "Status",
+            "kilometer": "Kilometer",
+            "briefCarRegistrationCertificate": "Fahrzeugschein",
+            "carGeneralDamagesDocument": "Allgemeine Schäden",
+            "carInsuranceContract": "Versicherungsverträge",
+            "carInvoiceCertificate": "Rechnungen",
+            "carLeaseContract": "Leasingverträge",
+            "carQCCertificate": "TÜV Bestätigung",
+            "completeRegistrationCertificate": "Fahrzeugbrief"
+          },
+          "editFields": {
+            "mark": "Kennzeichen",
+            "isActive": "Status",
+            "kilometer": "Kilometer",
+            "briefCarRegistrationCertificate": "Fahrzeugschein",
+            "carGeneralDamagesDocument": "Allgemeine Schäden",
+            "carInsuranceContract": "Versicherungsverträge",
+            "carInvoiceCertificate": "Rechnungen",
+            "carLeaseContract": "Leasingverträge",
+            "carQCCertificate": "TÜV Bestätigung",
+            "completeRegistrationCertificate": "Fahrzeugbrief"
+          },
+          "detailFields": {
+            "mark": "Kennzeichen",
+            "isActive": "Status",
+            "kilometer": "Kilometer",
+            "briefCarRegistrationCertificate": "Fahrzeugschein",
+            "carGeneralDamagesDocument": "Allgemeine Schäden",
+            "carInsuranceContract": "Versicherungsverträge",
+            "carInvoiceCertificate": "Rechnungen",
+            "carLeaseContract": "Leasingverträge",
+            "carQCCertificate": "TÜV Bestätigung",
+            "completeRegistrationCertificate": "Fahrzeugbrief",
+            "createdAt": "Erstellt am",
+            "createdBy": "Erstellt von"
+          }
+        },
+        "book": {
+          "name": "Fahrzeugbuchung",
+          "description": "Dieses Modul ermöglicht es Fahrzeuge im Unternehmen zu reservieren.",
+          "headers": {
+            "id": "ID",
+            "mark": "Kennzeichen",
+            "isActive": "Status",
+            "actions": "Aktion"
+          },
+          "createFields": {
+            "mark": "Kennzeichen",
+            "isActive": "Status"
+          },
+          "editFields": {
+            "mark": "Kennzeichen",
+            "isActive": "Status"
+          },
+          "detailFields": {
+            "mark": "Kennzeichen",
+            "isActive": "Status",
+            "createdAt": "Erstellt am",
+            "createdBy": "Erstellt von"
+          }
+        }
+      },
+      "tools": {
+        "name": "Werkzeuge",
+        "description": "Mit dem Artikelmodul können Sie Artikel in Ihrem Unternehmen verwalten.",
+        "headers": {
+          "id": "Id",
+          "category": "Kategorie",
+          "description": "Beschreibung",
+          "qrCode": "QR Code",
+          "serialNumber": "S/N",
+          "condition": "Zustand",
+          "supplier": "Lieferant",
+          "invoiceDate": "Rechnungsdatum",
+          "purchasePrice": "Purchase Price",
+          "status": "Status",
+          "comment": "Kommentar",
+          "action": "Aktion"
+        },
+        "createFields": {
+          "category": "Kategorie",
+          "description": "Beschreibung",
+          "qrCode": "QR Code",
+          "serialNumber": "Seriennummer",
+          "storageLocation": "Speicherort",
+          "condition": "Zustand",
+          "supplier": "Lieferant",
+          "invoiceDate": "Rechnungsdatum",
+          "invoiceUrl": "Rechnung",
+          "purchasePrice": "Preis",
+          "comment": "Kommentar",
+          "createdBy": "Erstellt Von",
+          "createdAt": "Erstellt am"
+        },
+        "editFields": {
+          "categoryId": "Kategorie",
+          "name": "Name",
+          "qrcode": "QR Code ID",
+          "serialNumber": "Seriennummer",
+          "storageLocation": "Speicherort",
+          "condition": "Zustand",
+          "dealer": "Händler",
+          "invoiceDate": "Rechnungsdatum",
+          "purchasePrice": "Kaufpreis",
+          "invoiceUrl": "Rechnung",
+          "comment": "Kommentar"
+        },
+        "detailFields": {
+          "categoryId": "Kategorie",
+          "name": "Name",
+          "qrcode": "QR Code ID",
+          "serialNumber": "Seriennummer",
+          "storageLocation": "Speicherort",
+          "condition": "Zustand",
+          "dealer": "Händler",
+          "invoiceDate": "Rechnungsdatum",
+          "purchasePrice": "Kaufpreis",
+          "invoiceUrl": "Rechnung",
+          "comment": "Kommentar",
+          "createdBy": "Erstellt Von",
+          "createdAt": "Erstellt am"
+        }
+      },
+      "processes": {
+        "name": "Prozesse",
+        "description": "Das Modul Prozesse ermöglicht es Ihnen, Prozesse in Ihrem Unternehmen zu verwalten.",
+        "headers": {
+          "firstName": "Vorname",
+          "lastName": "Nachname",
+          "category": "Kategorie",
+          "title": "Titel",
+          "qrCodeId": "QR Code ID",
+          "serialNumber": "Seriennummer",
+          "issueDate": "Ausgabetag",
+          "outputTime": "Ausgabezeit",
+          "comment": "Kommentar",
+          "action": "Aktion"
+        },
+        "fields": {
+          "createProcess": "Prozess erstellen",
+          "activityId": "Aktivität",
+          "employee": "Mitarbeiter",
+          "items": "Produkte",
+          "category": "Kategorie",
+          "description": "Beschreibung, QR Code, S/N",
+          "condition": "Zustand",
+          "comment": "Kommentar",
+          "add": "Hinzufügen",
+          "issueDateTime": "Ausgabedatum und -uhrzeit",
+          "title": "Titel",
+          "action": "Aktion",
+          "new": "Neu",
+          "secondhand": "Gebraucht",
+          "malfunction": "Fehlfunktion",
+          "reissue": "Neuausgabe",
+          "exchange": "Austausch gegen alte Werkzeuge"
+        },
+        "createFields": {
+          "activityType": "Vorgangsart",
+          "employee": "Mitarbeiter",
+          "issueDate": "Ausgabetag",
+          "issueTime": "Ausgabezeit",
+          "item": {
+            "title": "Produkte",
+            "name": "Name",
+            "category": "Kategorie",
+            "description": "Beschreibung / Seriennummer / QR",
+            "outputState": "Ausgangszustand",
+            "comment": "Kommentar"
+          },
+          "comment": "Kommentar"
+        },
+        "editFields": {
+          "activityType": "Vorgangsart",
+          "employee": "Mitarbeiter",
+          "issueDate": "Ausgabetag",
+          "issueTime": "Ausgabezeit",
+          "item": {
+            "name": "Name",
+            "category": "Kategorie",
+            "description": "Beschreibung / Seriennummer / QR",
+            "outputState": "Ausgangszustand",
+            "comment": "Kommentar"
+          },
+          "category": "Kategorie",
+          "comment": "Kommentar"
+        },
+        "detailFields": {
+          "activityType": "Vorgangsart",
+          "employee": "Mitarbeiter",
+          "issueDate": "Ausgabetag",
+          "issueTime": "Ausgabezeit",
+          "item": {
+            "name": "Name",
+            "category": "Kategorie",
+            "description": "Beschreibung / Seriennummer / QR",
+            "outputState": "Ausgangszustand",
+            "comment": "Kommentar"
+          },
+          "category": "Kategorie",
+          "comment": "Kommentar",
+          "createdBy": "Erstellt Von",
+          "createdAt": "Erstellt am"
+        },
+        "tabs": {
+          "borrowed": "Geliehen",
+          "returned": "Zurückgekommen"
+        }
+      }
+    },
+    "settings": {
+      "name": "Einstellungen",
+      "languages": "Sprachen",
+      "rolePermission": "Rollen & Berechtigungen",
+      "fields": {
+        "language": "Sprache"
+      },
+      "roles": {
+        "name": "Rollen",
+        "description": "Hier werden die Rollen für das gesamte System verwaltet.",
+        "headers": {
+          "id": "ID",
+          "name": "Name",
+          "createdAt": "Erstellt am",
+          "actions": "Aktion"
+        },
+        "comment": "Kommentar"
+      },
+      "holidays": {
+        "name": "Urlaub",
+        "description": "Hier können alle Urlaubstage verwaltet werden.",
+        "headers": {
+          "id": "ID",
+          "name": "Name",
+          "date": "Datum",
+          "actions": "Aktion"
+        },
+        "createFields": {
+          "name": "Name",
+          "date": "Datum",
+          "createdBy": "Erstellt Von",
+          "createdAt": "Erstellt am"
+        },
+        "editFields": {
+          "name": "Name",
+          "date": "Datum"
+        },
+        "detailFields": {
+          "name": "Name",
+          "date": "Datum",
+          "createdAt": "Erstellt am",
+          "createdBy": "Erstellt von"
+        }
+      },
+      "employeetypes": {
+        "name": "Mitarbeiter Arten",
+        "description": "Dieses Modul ermöglicht es die Mitarbeiter Typen im Unternehmen zu verwalten.",
+        "headers": {
+          "id": "ID",
+          "name": "Name",
+          "color": "Farbe",
+          "comment": "Kommentar",
+          "actions": "Aktion"
+        },
+        "createFields": {
+          "name": "Name",
+          "color": "Farbe",
+          "comment": "Kommentar"
+        },
+        "editFields": {
+          "name": "Name",
+          "color": "Farbe",
+          "comment": "Kommentar"
+        },
+        "detailFields": {
+          "name": "Name",
+          "color": "Farbe",
+          "comment": "Kommentar",
+          "createdAt": "Erstellt am",
+          "createdBy": "Erstellt von"
+        }
+      },
+      "crafts": {
+        "name": "Gewerke",
+        "description": "Hier werden alle verschiedenen Bereiche im Unternehmen getrennt",
+        "headers": {
+          "id": "ID",
+          "name": "Name",
+          "actions": "Aktion"
+        },
+        "createFields": {
+          "name": "Name"
+        },
+        "editFields": {
+          "name": "Name"
+        },
+        "detailFields": {
+          "name": "Name",
+          "createdAt": "Erstellt am",
+          "createdBy": "Erstellt von"
+        }
+      },
+      "categories": {
+        "name": "Kategorie",
+        "description": "Auf dieser Seite kann man Kategorien für Werkzeuge festlegen.",
+        "headers": {
+          "id": "ID",
+          "name": "Name",
+          "hasAction": "In Verwendung",
+          "action": "Aktion"
+        },
+        "createFields": {
+          "name": "Name",
+          "hasAction": "Eintrag erstellen"
+        },
+        "editFields": {
+          "name": "Name",
+          "hasAction": "Eintrag bearbeiten"
+        },
+        "detailFields": {
+          "name": "Name",
+          "hasAction": "Eintrag ansehen",
+          "createdAt": "Erstellt am",
+          "createdBy": "Erstellt von"
+        }
+      },
+      "weighted": {
+        "name": "Gewichteter Durchschnitt",
+        "description": "Berechnete Lagerkosten",
+        "headers": {
+          "num": "Num",
+          "id": "Projektnummer",
+          "address": "Projektadresse",
+          "sum": "Projektübersicht",
+          "material": "Materialaufwand",
+          "assignment": "Material/Aufgabe",
+          "share": "Zuweisung der Gesamtzuweisungen teilen",
+          "action": "Aktion"
+        },
+        "emptyTable": "Projekt hinzufügen, um mit der Berechnung des gewichteten Durchschnitts zu beginnen",
+        "storageCost": "Gesamtspeicherkosten (Gewichteter Durchschnitt)",
+        "newProject": {
+          "title": "Neues Projekt hinzufügen"
+        },
+        "editProject": {
+          "title": "Projekt bearbeiten"
+        },
+        "deleteProject": {
+          "title": "Projekt löschen",
+          "confirmation": {
+            "title": "Projektbestätigung löschen",
+            "text": "Möchten Sie das ausgewählte Projekt wirklich löschen?",
+            "oldValue": "Alte Gesamtspeicherkosten",
+            "newValue": "Neue Gesamtspeicherkosten"
+          }
+        }
+      },
+      "workingHours": {
+        "name": "Arbeitszeiten",
+        "description": "Hier werden alle Arbeitszeiten der Mitarbeiter verwaltet.",
+        "fields": {
+          "fullAddress": "Straße und Nr.",
+          "postalCode": "Postleitzahl",
+          "city": "Stadt",
+          "country": "Land",
+          "constructionSiteThreshold": "Schwellenzahl",
+          "startLocation": "Startort",
+          "inStorage": "Auf Lager",
+          "onConstruction": "Auf der Baustelle",
+          "transferTime": "Transferzeit",
+          "yesWorkingTime": "Ja, es zählt als Arbeitszeit",
+          "noWorkingTime": "Nein, sie zählt nicht als Arbeitszeit",
+          "roundingRule": "Rundungsregel",
+          "roundMath": "Mathematisch richtig runden",
+          "roundDown": "Alle angefangenen 15 Min. abrunden.",
+          "roundUp": "Alle 15 Minuten aufrunden. Im Gange",
+          "paymentType": "Zahlungsart",
+          "paymentVariable": "Bezahlt nach tatsächlichen Stunden aus der Zeiterfassung",
+          "paymentFixed": "Bezahlt durch eine feste Anzahl von Stunden pro Monat",
+          "fixedHours": "Feste Stunden/Monat",
+          "minimumOvertime": "Mindestsaldo der Überstunden",
+          "wageRatePerHour": "Lohnsatz pro Stunde",
+          "locationOffice": "Standort des Büros",
+          "locationStorage": "Standort des Speichers",
+          "locationEducation": "Standort der Bildungseinrichtung",
+          "thresholdLabel": "Schwellenabstand zwischen Baustellenadresse und Login/Logout-Standort",
+          "timeTracking": "Beginn der Arbeitszeit für Zeiterfassung",
+          "transferTimeLabel": "Transferzeit zwischen Baustellen zählt als Arbeitszeit",
+          "roundingRuleLabel": "Rundungsregel für Zeiterfassung",
+          "timeSheets": "Stundenzettel",
+          "fixedAmount": "Feste Anzahl von Stunden/Monat",
+          "minBalance": "Mindestguthaben auf dem Überstundenkonto",
+          "hours": "Std"
+        }
+      }
+    },
+    "business": {
+      "name": "Betrieb",
+      "offers": {
+        "name": "Angebot",
+        "description": "Hier kannst du alle Angebote Deines Unternehmens verwalten.",
+        "tabs": {
+          "all": "Alle",
+          "open": "Offen",
+          "overdue": "überfällig",
+          "accepted": "Akzeptiert",
+          "declined": "Abgelehnt"
+        },
+        "headers": {
+          "id": "ID",
+          "projectNumber": "Projektnummer",
+          "offerNumber": "Angebotsnummer",
+          "constructionSiteTitle": "Baustellenname",
+          "constructionSiteAddress": "Baustellenadresse",
+          "client": "Auftraggeber",
+          "category": "Kategorie",
+          "craft": "Gewerk",
+          "amountOfOffer": "Angebotsbetrag",
+          "calculator": "Kalkulator",
+          "status": "Status",
+          "actions": "Aktion"
+        },
+        "createFields": {
+          "offerType": "Angebotsart",
+          "projectNumber": "Projektnummer",
+          "offerNumber": "Angebotsnummer",
+          "constructionSiteTitle": "Baustellenname",
+          "constructionSiteAddress": "Baustellenadresse",
+          "client": "Auftraggeber",
+          "clientAddress": "Kundenadresse",
+          "architect": "Architekten",
+          "architectAddress": "Architektenadresse",
+          "category": "Kategorie",
+          "craft": "Gewerk",
+          "estimatedAmountOfOffer": "Erwarteter Anbegotsbetrag",
+          "deadline": "Frist",
+          "offerHandedIn": "Angebotseingang",
+          "validity": "Gültigkeit",
+          "validUntil": "Gültig bis",
+          "priority": "Priorität",
+          "startDate": "Datum Beginn",
+          "endDate": "Datum Ende",
+          "statusOfMaterialPrice": "Aktueller Materialpreis",
+          "calculator": "Kalkulator",
+          "comment": "Kommentar",
+          "createdBy": "Erstellt Von",
+          "createdAt": "Erstellt am"
+        }
+      },
+      "assignments": {
+        "name": "Auftrag",
+        "description": "Hier kannst du alle Aufträge Deines Unternehmens verwalten.",
+        "tab": {
+          "all": "Alle",
+          "inExecution": "in Ausführung",
+          "finished": "Fertig"
+        },
+        "createFolder": "Ordnerrücken erstellen",
+        "downloadBatch": "Stapel herunterladen",
+        "tabDetail": {
+          "details": {
+            "name": "Einzelheiten",
+            "assignmentType": "Zuweisungstyp",
+            "offerNumber": "Auftrag Nr.",
+            "projectNumber": "Projektnummer",
+            "projectTitle": "Baustellenname",
+            "projectAddress": "Baustellenadresse",
+            "category": "Kategorie",
+            "craft": "Gewerk",
+            "assignmentDate": "Zuweisungsdatum",
+            "startDate": "Startdatum",
+            "endDate": "Endtermin",
+            "warrantyTimePeriod": "Garantiezeitraum",
+            "folderType": "Ordnertyp",
+            "folderNo": "Ordner Nr.",
+            "statusConstruction": "Status",
+            "showIn": "Gezeigt in 'Halbfertige Dienste'",
+            "createdBy": "Erstellt Von",
+            "createdAt": "Erstellt am"
+          },
+          "invoiceDetails": {
+            "name": "Rechnungs-Details",
+            "assignmentSum": "Auftragssumme",
+            "accruedServices": "Zusätzliche aufgelaufene Dienstleistungen",
+            "totalSum": "Gesamtsumme",
+            "invoiceType": "Rechnungsart",
+            "invoiceNo": "Rechnung Nr",
+            "invoiceDate": "Rechnungsdatum"
+          },
+          "people": {
+            "name": "Personen",
+            "client": "Auftraggeber",
+            "clientAddress": "Kundenadresse",
+            "architect": "Architekt",
+            "architectAddress": "Architektenadresse",
+            "projectAssistance": "Projektassistenz",
+            "projectLead": "Bauleiter",
+            "workingStudent": "Arbeitender Student"
+          },
+          "document": {
+            "name": "Dokumentieren",
+            "offerUrl": "Angebot",
+            "notesUrl": "Anmerkungen",
+            "constructionContractUrl": "Bauvertrag",
+            "balancingUrl": "Auswuchten",
+            "orderUrl": "Aufträge",
+            "correspondenceUrl": "Korrespondenz",
+            "obligationUrl": "Verpflichtung nach VOB",
+            "protocolsUrl": "Protokolle",
+            "pictureUrl": "Bild",
+            "planUrl": "Pläne",
+            "preliminaryPlanningUrl": "Bauzeiten",
+            "allowanceUrl": "Zuschuss",
+            "costEstimateUrl": "Geschätzte Kosten",
+            "otherUrl": "Sonstiges"
+          },
+          "checklist": {
+            "name": "Checkliste",
+            "writtenContractConfirmation": "Schriftliche Vertragsbestätigung",
+            "constructionSchedule": "Bauablauf",
+            "sampling": "Probenahme",
+            "materialOrder": "Materialbestellung",
+            "inProgressPayment": "Laufende Zahlung",
+            "finalInvoice": "Schlussrechnung",
+            "acceptance": "Akzeptanz"
+          },
+          "remarks": {
+            "name": "Bemerkungen",
+            "otherDocument": "Anderes Dokument",
+            "comment": "Kommentar"
+          },
+          "report": {
+            "name": "Prüfbericht",
+            "date": "Datum",
+            "type": "Typ",
+            "workingTime": "Arbeitszeit",
+            "description": "Beschreibung",
+            "mobileNumber": "Handy",
+            "temperature": "Temperatur",
+            "weatherCondition": "Zustand",
+            "impediments": "Allgemeine Bemerkungen",
+            "fileLink": "Foto",
+            "typeEmployee": "Typ Mitarbeiter",
+            "employeeId": "Mitarbeitername",
+            "externalName": "Mitarbeitername Extern",
+            "startWorkTime": "Startzeit",
+            "endWorkTime": "Endzeit",
+            "totalHours": "Gesamtstunden"
+          },
+          "folderSpine": {
+            "add": "Fügen Sie einen weiteren Ordnerrücken hinzu",
+            "folder": "Ordner",
+            "folderSpineType": "Ordnerrückentyp",
+            "addtive": "Zusatzstoff",
+            "checkFolderSpine": "Überprüfen Sie bereits erstellte Ordnerrücken"
+          }
+        },
+        "headers": {
+          "projectNumber": "Projektnummer",
+          "constructionProjectTitle": "Baustellenname",
+          "constructionProjectAddress": "Baustellenadresse",
+          "client": "Auftraggeber",
+          "category": "Kategorie",
+          "craft": "Gewerk",
+          "projectAssistance": "Projektassistenz",
+          "projectLead": "Bauleiter",
+          "folderNo": "Ordner Nr.",
+          "assignmentSum": "Auftragssumme",
+          "assignmentDate": "Zuweisungsdatum",
+          "status": "Status",
+          "actions": "Aktion"
+        },
+        "editFields": {
+          "name": "Einstellungen",
+          "description": "Hier verwaltest du deine Einstellungen für Werkules."
+        },
+        "detailFields": {
+          "name": "[DE] Detail",
+          "description": "[DE] Assignment detail module enables you to manage assignments details in your company."
+        }
+      }
+    },
+    "projectPlanning": {
+      "name": "Planung",
+      "week": "Woche",
+      "today": "Heute",
+      "change": "Ändern",
+      "preliminaryPlanning": {
+        "name": "Bauzeiten",
+        "description": "Hier kannst du alle Baustellen vorplanen.",
+        "createFields": {
+          "constructionSite": "Projektname",
+          "startDate": "Projektbeginn",
+          "endDate": "Projektende"
+        }
+      },
+      "employeePlanning": {
+        "name": "Mitarbeiterplanung",
+        "headers": {
+          "monday": "Mo",
+          "tuesday": "Di",
+          "wednesday": "Mi",
+          "thursday": "Do",
+          "friday": "Fr"
+        },
+        "fields": {
+          "name": "Name",
+          "isOther": "Typ",
+          "reference": "Beschreibung",
+          "projectNumber": "Projektnummer",
+          "bv": "Bauvorhaben",
+          "bl": "Bauleiter",
+          "comment": "Kommentar",
+          "participants": "Mitarbeiter"
+        }
+      },
+      "subcontractorPlanning": {
+        "name": "Nachunternehmerplanung",
+        "headers": {
+          "monday": "Mo",
+          "tuesday": "Di",
+          "wednesday": "Mi",
+          "thursday": "Do",
+          "friday": "Fr"
+        },
+        "fields": {
+          "name": "Name des Mitarbeiters des Nachunternehmers",
+          "isOther": "Typ",
+          "reference": "Beschreibung",
+          "projectNumber": "Projektnummer",
+          "bv": "Bauvorhaben",
+          "bl": "Bauleiter",
+          "comment": "Kommentar",
+          "participants": "Mitarbeiter des Nachunternehmers"
+        }
+      }
+    },
+    "tasks": {
+      "name": "Aufgaben",
+      "description": "Hier werden alle Aufgaben im Unternehmen verwaltet.",
+      "project": "Projekt",
+      "assignEmployee": "Aufgabe zuweisen",
+      "tab": {
+        "all": "Alle",
+        "assigned": "Zugewiesen",
+        "notAssigned": "Nicht zugewiesen"
+      },
+      "headers": {
+        "id": "ID",
+        "taskTitle": "Titel der Aufgabe",
+        "project": "Projekt",
+        "deadline": "Frist",
+        "employeeAssigned": "Mitarbeiter zugewiesen",
+        "comment": "Kommentar",
+        "actions": "Aktion"
+      },
+      "createFields": {
+        "employee": "Mitarbeiter",
+        "constructionSiteTitle": "Baustellenname",
+        "constructionSiteAddress": "Baustellenadresse",
+        "taskTitle": "Titel der Aufgabe",
+        "deadline": "Frist",
+        "description": "Beschreibung",
+        "subtasks": "Teilaufgaben",
+        "subtaskTitle": "Titel der Unteraufgabe",
+        "important": "Wichtig",
+        "fileAttachment": "Dokumente",
+        "otherAttachment": "Verweis auf andere Dokumente",
+        "status": "Status",
+        "comment": "Kommentar",
+        "createdBy": "Erstellt Von",
+        "createdAt": "Erstellt am"
+      }
+    },
+    "openClaims": {
+      "name": "Offene Forderungen",
+      "openClaims": "Offene Forderungen",
+      "paymentHistory": "Zahlungsverlauf",
+      "valueCorrection": "Wertberichtigungen",
+      "newOpenClaim": "Neue Offene Forderung",
+      "newPayment": "Neue Zahlung",
+      "headers": {
+        "projectNo": "Projektnummer",
+        "projectAddress": "Projektadresse",
+        "contactPerson": "Kontaktperson",
+        "invoiceNo": "Rechnungsnummer",
+        "type": "Typ",
+        "invoiceType": "Rechnungstyp",
+        "dueDate": "Fälligkeitsdatum",
+        "invoiceAmount": "Rechnungsbetrag",
+        "allowedSconto": "Bestätigtes Skonto",
+        "paidAmount": "Bezahlter Betrag",
+        "openClaim": "Offene Forderung",
+        "valueCorrection": "Wertberichtigung",
+        "comment": "Kommentar",
+        "actions": "Aktion"
+      },
+      "createOpenClaimDialog": {
+        "title": "Offene Forderung erstellen",
+        "edit": "Offene Forderung bearbeiten",
+        "projectNo": "Projektnummer",
+        "projectAddress": "Projektadresse",
+        "invoiceType": "Rechnungstyp",
+        "invoiceNo": "Rechnungsnummer",
+        "dueDate": "Fälligkeitsdatum",
+        "claim": "Forderung",
+        "valueCorrection": "Wertberichtigung",
+        "invoiceAmount": "Rechnungssumme",
+        "allowedSconto": "Bestätigtes Skonto",
+        "discount": "Rabatt",
+        "paidAmount": "Bezahlter Betrag",
+        "openClaim": "Offene Forderung"
+      },
+      "createPaymentDialog": {
+        "title": "Zahlung erstellen",
+        "projectNo": "Projektnummer",
+        "projectAddress": "Projektadresse",
+        "invoiceType": "Rechnungstyp",
+        "invoiceNo": "Rechnungsnummer",
+        "dateOfPayment": "Fälligkeitsdatum",
+        "paidAmount": "Bezahlter Betrag",
+        "comment": "Kommentar"
+      },
+      "paymentHistoryDialog": {
+        "title": "Zahlungsverlauf",
+        "projectNo": "Projektnummer",
+        "projectAddress": "Projektadresse",
+        "dateOfPayment": "Zahlungsdatum",
+        "comment": "Kommentar",
+        "paidAmount": "Bezahlter Betrag",
+        "totalAmountPaid": "Gesamter bezahlter Betrag"
+      }
+    },
+    "workingHours": {
+      "name": "Arbeitszeiten",
+      "description": "Hier werden alle Arbeitszeiten der Mitarbeiter verwaltet.",
+      "newSingle": "Neue Einzeltransaktion",
+      "newMultiple": "Neuer Vorgang",
+      "sum": "Gesamtstunden: ",
+      "multiple": {
+        "title": "Vorgang erstellen",
+        "empty": "Vorgang hinzufügen",
+        "headers": {
+          "employee": "Mitarbeiter",
+          "type": "Kategorie",
+          "startTime": "Startzeit",
+          "endTime": "Endzeit",
+          "breakTime": "Pause",
+          "totalTime": "Gesamtzeit",
+          "distanceStart": "Entfernung zum Standort zur Startzeit",
+          "distanceEnd": "Entfernung zum Standort zur Endzeit",
+          "action": "Aktion"
+        }
+      },
+      "createSingle": {
+        "title": {
+          "create": "Vorgang erstellen",
+          "edit": "Vorgang bearbeiten",
+          "detail": "Siehe Vorgangsdetails",
+          "delete": "Vorgangsdetails löschen"
+        },
+        "fields": {
+          "checkbox": "Abweichungen in der Projektplanung prüfen",
+          "fullName": "vollständiger Name des",
+          "location": "Lage",
+          "access": {
+            "label": "Zugang",
+            "options": {
+              "employee": "Mitarbeiter",
+              "subcontractor": "Subunternehmer"
+            }
+          },
+          "date": {
+            "only": "Datum",
+            "start": "Startdatum",
+            "end": "Endtermin"
+          },
+          "vehicles": "Kennzeichen",
+          "time": {
+            "start": "Startzeit",
+            "end": "Endzeit",
+            "break": "Pause",
+            "total": "Gesamtarbeitszeit",
+            "minutes": "minute",
+            "hours": "stunde",
+            "rounded": {
+              "start": "Gerundete Startzeit",
+              "end": "Abgerundete Endzeit"
+            },
+            "distance": {
+              "start": "Startzeit Entfernung Standort zum Projekt",
+              "end": "Endzeitentfernung Standort zum Projekt"
+            }
+          },
+          "constructionSite": {
+            "projectNumber": "Projektnummer",
+            "projectTitle": "Projekttitel",
+            "projectAddress": "Projektadresse"
+          },
+          "education": {
+            "institution": "Bildungseinrichtung"
+          },
+          "sick": {
+            "certificate": "AU-Zertifikat"
+          },
+          "vacation": {
+            "vacationType": {
+              "label": "Urlaubsart",
+              "options": {
+                "halfday": "Halber Tag",
+                "fullday": "Ganzen Tag",
+                "special": "Sonderurlaub",
+                "unpaid": "Unbezahlter Urlaub"
+              }
+            }
+          },
+          "overtime": {
+            "overtimeType": {
+              "label": "Art der Reduzierung von Überstunden",
+              "options": {
+                "workoff": "Abarbeiten",
+                "payout": "Auszahlung"
+              }
+            },
+            "currentBalance": "Aktueller Saldo auf dem Überstundenkonto",
+            "paidOut": "Vom Stundenkonto auszuzahlende Stunden"
+          },
+          "others": {
+            "description": "Bezeichnung"
+          },
+          "created": {
+            "by": "Erstellt Von",
+            "at": "Erstellt am"
+          },
+          "comment": "Kommentar"
+        },
+        "delete": {
+          "title": "Daten löschen",
+          "confirm": "Möchten Sie diese Daten wirklich löschen?"
+        }
+      },
+      "transactionTypes": {
+        "all": "Alle",
+        "constructionSite": "Baustelle",
+        "officeWork": "Büroarbeiten",
+        "storage": "Lagerung",
+        "education": "Ausbildung",
+        "sickLeave": "Krankenstand",
+        "vacation": " Urlaub",
+        "overtimeReduction": "Überstundenabbau",
+        "others": "Andere"
+      },
+      "headers": {
+        "id": "ID",
+        "date": "Datum",
+        "startingTime": "Startzeit",
+        "endingTime": "Endzeit",
+        "comment": "Kommentar",
+        "map": "Karte",
+        "acceptance": "Freigabe",
+        "actions": "Aktionen",
+        "constructionSite": {
+          "access": "Zugang",
+          "name": "Name & Nachname",
+          "vehicleNo": "Kennzeichen",
+          "projectNo": "Projektnummer",
+          "projectTitle": "Bauvorhaben",
+          "totalWorkingTime": "Arbeitszeit"
+        },
+        "storage": {
+          "employee": "Mitarbeiter",
+          "vehicleNo": "Kennzeichen"
+        },
+        "officeWork": {
+          "name": "Name & Nachname",
+          "vehicleNo": "Kennzeichen",
+          "totalWorkingTime": "Arbeitszeit",
+          "locationOfOffice": "Standort des Büros"
+        },
+        "education": {
+          "employee": "Mitarbeiter",
+          "type": "Typ",
+          "vehicleNo": "Kennzeichen"
+        },
+        "overtimeReduction": {
+          "overtimeReduced": "Überstunden reduziert",
+          "remainingOvertime": "Verbleibende Überstunden"
+        },
+        "others": {
+          "employee": "Mitarbeiter",
+          "description": "Beschreibung",
+          "breakTime": "Pausenzeit"
+        },
+        "sickLeave": {
+          "employee": "Mitarbeiter",
+          "status": "Status",
+          "startDate": "Startdatum",
+          "endDate": "Endtermin",
+          "auCertificate": "AU Bescheinigung",
+          "createdBy": "Erstellt Von",
+          "createdAt": "Erstellt am",
+          "comment": "Kommentar"
+        },
+        "vacation": {
+          "employee": "Mitarbeiter",
+          "vacationType": "Urlaubsart",
+          "startDate": "Startdatum",
+          "endDate": "Endtermin",
+          "comment": "Kommentar",
+          "restEntitlement": "Resturlaubsanspruch",
+          "createdBy": "Erstellt Von",
+          "createdAt": "Erstellt am"
+        }
+      },
+      "tabs": {
+        "open": "Offen",
+        "accepted": "Akzeptiert",
+        "rejected": "Hat abgelehnt"
+      }
+    },
+    "filemanager": {
+      "NewFolder": "Neuer Ordner",
+      "Upload": "Hochladen",
+      "Delete": "Löschen",
+      "Rename": "Umbenennen",
+      "Download": "Herunterladen",
+      "Cut": "Schnitt",
+      "Copy": "Kopieren",
+      "Paste": "Einfügen",
+      "SortBy": "Sortiere nach",
+      "Refresh": "Aktualisierung",
+      "Item-Selection": "Artikel ausgewählt",
+      "Items-Selection": "Elemente ausgewählt",
+      "View": "Aussicht",
+      "Details": "Einzelheiten",
+      "SelectAll": "Wählen Sie Alle",
+      "Open": "Öffnen",
+      "Tooltip-NewFolder": "Neuer Ordner",
+      "Tooltip-Upload": "Hochladen",
+      "Tooltip-Delete": "Löschen",
+      "Tooltip-Rename": "Umbenennen",
+      "Tooltip-Download": "Herunterladen",
+      "Tooltip-Cut": "Schnitt",
+      "Tooltip-Copy": "Kopieren",
+      "Tooltip-Paste": "Einfügen",
+      "Tooltip-SortBy": "Sortiere nach",
+      "Tooltip-Refresh": "Aktualisierung",
+      "Tooltip-Selection": "Auswahl aufheben",
+      "Tooltip-View": "Aussicht",
+      "Tooltip-Details": "Einzelheiten",
+      "Tooltip-SelectAll": "Wählen Sie Alle",
+      "Name": "Name",
+      "Size": "Größe",
+      "DateModified": "Geändert",
+      "DateCreated": "Datum erstellt",
+      "Path": "Pfad",
+      "Modified": "Geändert",
+      "Created": "Erstellt",
+      "Location": "Ort",
+      "Type": "Art",
+      "Permission": "Genehmigung",
+      "Ascending": "Aufsteigend",
+      "Descending": "Absteigend",
+      "None": "Keiner",
+      "View-LargeIcons": "Große Icons",
+      "View-Details": "Einzelheiten",
+      "Search": "Suche",
+      "Button-Ok": "OK",
+      "Button-Cancel": "Stornieren",
+      "Button-Yes": "Ja",
+      "Button-No": "Nein",
+      "Button-Create": "Erstellen",
+      "Button-Save": "Sparen",
+      "Header-NewFolder": "Mappe",
+      "Content-NewFolder": "Geben Sie Ihren Ordnernamen ein",
+      "Header-Rename": "Umbenennen",
+      "Content-Rename": "Geben Sie Ihren neuen Namen ein",
+      "Header-Rename-Confirmation": "Bestätigung umbenennen",
+      "Content-Rename-Confirmation": "Wenn Sie eine Dateinamenerweiterung ändern, wird die Datei möglicherweise instabil. Möchten Sie sie wirklich ändern?",
+      "Header-Delete": "Datei löschen",
+      "Content-Delete": "Möchten Sie diese Datei wirklich löschen?",
+      "Header-Multiple-Delete": "Mehrere Dateien löschen",
+      "Content-Multiple-Delete": "Möchten Sie diese {0} Dateien wirklich löschen?",
+      "Header-Folder-Delete": "Lösche Ordner",
+      "Content-Folder-Delete": "Möchten Sie diesen Ordner wirklich löschen?",
+      "Header-Duplicate": "Datei / Ordner existiert",
+      "Content-Duplicate": "{0} existiert bereits. Möchten Sie umbenennen und einfügen?",
+      "Header-Upload": "Daten hochladen",
+      "Error": "Error",
+      "Validation-Empty": "Der Datei - oder Ordnername darf nicht leer sein.",
+      "Validation-Invalid": "Der Datei- oder Ordnername {0} enthält ungültige Zeichen. Bitte verwenden Sie einen anderen Namen. Gültige Datei- oder Ordnernamen dürfen nicht mit einem Punkt oder Leerzeichen enden und keines der folgenden Zeichen enthalten: \\ /: *? \" < > | ",
+      "Validation-NewFolder-Exists": "Eine Datei oder ein Ordner mit dem Namen {0} existiert bereits.",
+      "Validation-Rename-Exists": "{0} kann nicht in {1} umbenannt werden: Ziel existiert bereits.",
+      "Folder-Empty": "Dieser Ordner ist leer",
+      "File-Upload": "Dateien zum Hochladen hierher ziehen",
+      "Search-Empty": "Keine Ergebnisse gefunden",
+      "Search-Key": "Versuchen Sie es mit anderen Stichwörtern",
+      "Filter-Empty": "keine Ergebnisse gefunden",
+      "Filter-Key": "Versuchen Sie es mit einem anderen Filter",
+      "Sub-Folder-Error": "Der Zielordner ist der Unterordner des Quellordners.",
+      "Same-Folder-Error": "Der Zielordner ist derselbe wie der Quellordner.",
+      "Access-Denied": "Zugriff verweigert",
+      "Access-Details": "Sie haben keine Berechtigung, auf diesen Ordner zuzugreifen.",
+      "Header-Retry": "Die Datei existiert bereits",
+      "Content-Retry": "In diesem Ordner ist bereits eine Datei mit diesem Namen vorhanden. Was möchten Sie tun?",
+      "Button-Keep-Both": "Behalte beides",
+      "Button-Replace": "Ersetzen",
+      "Button-Skip": "Überspringen",
+      "ApplyAll-Label": "Mache das für alle aktuellen Artikel",
+      "KB": "KB",
+      "Access-Message": "{0} ist nicht zugänglich. Sie benötigen die Berechtigung, um die Aktion {1} auszuführen.",
+      "Network-Error": "NetworkError: Fehler beim Senden auf XMLHTTPRequest: Fehler beim Laden",
+      "Server-Error": "ServerError: Ungültige Antwort von"
+    }
+  },
+  "button": {
+    "save": "Speichern",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "close": "schließen",
+    "yes": "Ja",
+    "no": "Nein",
+    "add": "Hinzufügen",
+    "upload": "Datei hochladen"
+  },
+  "validation": {
+    "required": "erforderlich",
+    "notValid": "ist ungültig",
+    "doesNotMatch": "stimmt nicht überein",
+    "moreThan": "muss mehr sein als",
+    "lessThan": "muss kleiner sein als",
+    "characters": "zeichen",
+    "notPhoneFormat": "Dies ist kein Telefonnummernformat",
+    "notNumber": "Nur Zahlen akzeptieren",
+    "currency": "Bitte geben Sie eine gültige Währung an"
+  }
+}
