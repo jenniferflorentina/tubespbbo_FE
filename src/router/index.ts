@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import i18n from '@/i18n';
 import store from '@/store/index';
 import { setTitle } from '@/utils/dom/helper';
 // layouts

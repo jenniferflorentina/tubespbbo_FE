@@ -8,10 +8,10 @@ const UNAUTHORIZED = 401;
 const ax = axios.create();
 ax.interceptors.request.use(
   async (config) => {
-    const { token } = store.getters;
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
+    // const { token } = store.getters;
+    // if (token) {
+    //   config.headers.Authorization = `Bearer ${token}`;
+    // }
 
     config.headers['Access-Control-Allow-Origin'] = '*';
     config.headers['Access-Control-Allow-Headers'] = '*';

@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
-import i18n from '@/i18n';
 import '@/scss/vuetify/overrides.scss';
 
 Vue.use(Vuetify);
