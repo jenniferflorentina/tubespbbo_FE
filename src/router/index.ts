@@ -23,6 +23,7 @@ import Register from '@/views/Register.vue';
 import Landing from '@/views/Landing.vue';
 import Profile from '@/views/Profile.vue';
 import Index from '@/views/user/Index.vue';
+import IndexAdmin from '@/views/admin/Index.vue';
 
 Vue.use(VueRouter);
 
@@ -76,6 +77,10 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     component: Index,
+  },
+  {
+    path: '/admin/index',
+    component: IndexAdmin,
   },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
