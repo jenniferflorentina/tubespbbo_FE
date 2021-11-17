@@ -12,6 +12,7 @@
             <v-text-field
               id="auth-login-input-username"
               v-model="username"
+              label="Username"
               :rules="[validation.required(userLabel)]"
               class="mt-4 custom-validation"
               outlined
@@ -19,6 +20,7 @@
             <v-text-field
               id="auth-login-input-password"
               v-model="password"
+              label="Password"
               :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
               :rules="[validation.required(passLabel)]"
               :type="showPassword ? 'text' : 'password'"

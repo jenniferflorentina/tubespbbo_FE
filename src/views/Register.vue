@@ -27,13 +27,32 @@
               outlined
               clearable
             ></v-text-field>
-            <v-text-field
-              v-model="payload.dob"
-              label="Date of Birth"
-              append-icon="mdi-calendar"
-              outlined
-              clearable
-            ></v-text-field>
+            <v-menu
+              v-model="modalDob"
+              :close-on-content-click="false"
+              max-width="290px"
+              min-width="auto"
+              offset-y
+              transition="scale-transition"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-text-field
+                  v-model="formattedDob"
+                  v-bind="attrs"
+                  v-on="on"
+                  label="Date of Birth"
+                  append-icon="mdi-calendar"
+                  @click:append="modalDob = true"
+                  readonly
+                  outlined
+                ></v-text-field>
+              </template>
+              <v-date-picker
+                v-model="payload.dob"
+                no-title
+                @input="formatDatePicker"
+              />
+            </v-menu>
             <v-text-field
               v-model="payload.address"
               label="Address"
@@ -79,6 +98,8 @@ export default Vue.extend({
   data: () => ({
     service: new BaseService(),
     payload: {} as Users,
+    modalDob: false,
+    formattedDob: '',
   }),
 
   async created() {
@@ -117,6 +138,7 @@ export default Vue.extend({
           message: 'Welcome To Calleryna :)',
           color: 'success',
         });
+        this.$router.push(`/auth/login`);
         this.setLoading(false);
       } catch (e) {
         this.setLoading(false);
@@ -140,9 +162,9 @@ export default Vue.extend({
       ).validate();
     },
 
-    formatDatePicker(field) {
-      field.formatted = moment(field.value).format('DD-MM-YYYY');
-      field.showModal = false;
+    formatDatePicker() {
+      this.formattedDob = moment(this.payload.dob).format('DD-MM-YYYY');
+      this.modalDob = false;
     },
   },
 });
