@@ -1,3 +1,4 @@
+import '@/scss/syncfusion.scss';
 import VueMask from 'v-mask';
 import Vue from 'vue';
 import VueFeather from 'vue-feather';
@@ -10,8 +11,6 @@ import vuetify from './plugins/vuetify';
 import './registerServiceWorker';
 import router from './router';
 import store from './store';
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "@/assets/styles/tailwind.css";
 
 Vue.config.productionTip = false;
 Vue.use(VueMask);

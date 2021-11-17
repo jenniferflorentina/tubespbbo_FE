@@ -1,7 +1,5 @@
 // eslint-ignore-file
 import { ActionContext } from 'vuex';
-import BaseService from '@/services/Base';
-import AuthService from '@/services/Auth';
 
 interface AuthModule {
   token: string;
@@ -25,7 +23,7 @@ const actions = {
     { commit, dispatch }: ActionContext<AuthModule, never>,
     payload: {}
   ) => {
-    const authService = new AuthService('/auth/signin');
+    const authService = new AuthService('/login');
     const res = await authService.post(payload);
     await commit('setToken', res.token);
     await dispatch('getAuthorizationUser');
@@ -40,27 +38,9 @@ const actions = {
   getAuthorizationUser: async ({
     commit,
   }: ActionContext<AuthModule, never>) => {
-    const userService = new BaseService('/auth/me');
+    const userService = new BaseService('/login');
     const resUser = await userService.get('');
     commit('setAuthenticatedUser', resUser);
-  },
-  forgotPassword: async ({}: ActionContext<AuthModule, never>, payload: {}) => {
-    const authService = new AuthService('/auth/forgot-password');
-    await authService.post(payload);
-    return true;
-  },
-  resetPasswordValidation: async (
-    {}: ActionContext<AuthModule, never>,
-    params: ''
-  ) => {
-    const authService = new AuthService('/auth/reset-password');
-    await authService.get(params);
-    return true;
-  },
-  resetPassword: async ({}: ActionContext<AuthModule, never>, payload: {}) => {
-    const authService = new AuthService('/auth/reset-password');
-    await authService.put(payload);
-    return true;
   },
 };
 
