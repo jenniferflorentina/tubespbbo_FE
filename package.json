@@ -10,7 +10,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{vue,ts,js}": []
+    "*.{vue,ts,js}": ["eslint --fix --max-warnings 0"]
   },
   "dependencies": {
     "@cypress/vue": "^2.2.3",
