@@ -10,8 +10,6 @@ import Auth from '@/layouts/Auth.vue';
 
 import Dashboard from '@/views/admin/Dashboard.vue';
 import Settings from '@/views/admin/Settings.vue';
-import Tables from '@/views/admin/Tables.vue';
-import Maps from '@/views/admin/Maps.vue';
 
 // views for Auth layout
 
@@ -30,8 +28,7 @@ Vue.use(VueRouter);
 const routes: Array<RouteConfig> = [
   {
     path: '/admin',
-    redirect: '/admin/dashboard',
-    component: Admin,
+    component:Admin,
     children: [
       {
         path: '/admin/dashboard',
@@ -42,12 +39,18 @@ const routes: Array<RouteConfig> = [
         component: Settings,
       },
       {
-        path: '/admin/tables',
-        component: Tables,
+        path: '/admin/expenses',
+        component: () =>
+        import(
+          /* webpackChunkName: "adminExpenses" */ '@/views/admin/expenses/Index.vue'
+        ),
       },
       {
-        path: '/admin/maps',
-        component: Maps,
+        path: '/admin/products',
+        component: () =>
+        import(
+          /* webpackChunkName: "adminProducts" */ '@/views/admin/products/Index.vue'
+        ),
       },
     ],
   },
