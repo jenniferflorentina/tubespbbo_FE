@@ -53,7 +53,6 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/auth',
-    redirect: '/auth/login',
     component: Auth,
     children: [
       {
@@ -82,7 +81,6 @@ const routes: Array<RouteConfig> = [
     path: '/admin/index',
     component: IndexAdmin,
   },
-  { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 
 const router = new VueRouter({

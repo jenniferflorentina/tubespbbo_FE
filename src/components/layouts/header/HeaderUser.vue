@@ -11,7 +11,7 @@
     <div>
       <v-btn><router-link to="/auth/login"> Login</router-link> </v-btn>
       <v-btn class="mx-5"
-        ><router-link to="auth/register">Sign-Up</router-link></v-btn
+        ><router-link to="/auth/register">Sign-Up</router-link></v-btn
       >
       <!--After Login-->
       <v-menu
