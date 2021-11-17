@@ -1,7 +1,8 @@
+// eslint-disable-next-line import/no-cycle
 import axios from '@/plugins/axios';
 
 class AuthService {
-  baseURL = ''
+  baseURL = '';
 
   constructor(subURL = '') {
     this.baseURL = `${process.env.VUE_APP_BASE_URL}${subURL}`;

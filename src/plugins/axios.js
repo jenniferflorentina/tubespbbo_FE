@@ -1,17 +1,17 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 // eslint-disable-next-line import/no-cycle
-import store from '@/store';
+import store from '../store/index';
 
 const UNAUTHORIZED = 401;
 
 const ax = axios.create();
 ax.interceptors.request.use(
   async (config) => {
-    // const { token } = store.getters;
-    // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`;
-    // }
+    const { token } = store.getters;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
 
     config.headers['Access-Control-Allow-Origin'] = '*';
     config.headers['Access-Control-Allow-Headers'] = '*';

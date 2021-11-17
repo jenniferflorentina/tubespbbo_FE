@@ -17,24 +17,11 @@ export default {
   // application is right to left
   isRTL: false,
 
-  // dark theme colors
-  dark: {
-    background: '#05090c',
-    surface: '#111b27',
-    primary: '#c80b0e',
-    secondary: '#829099',
-    accent: '#82B1FF',
-    error: '#FF5252',
-    info: '#2196F3',
-    success: '#4CAF50',
-    warning: '#FFC107',
-  },
-
   // light theme colors
   light: {
     background: '#ffffff',
     surface: '#f2f5f8',
-    primary: '#c80b0e',
+    primary: '#4B3869',
     secondary: '#a0b9c8',
     accent: '#048ba8',
     error: '#ef476f',
