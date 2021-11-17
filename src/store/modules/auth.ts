@@ -1,4 +1,6 @@
 // eslint-ignore-file
+// eslint-disable-next-line import/no-cycle
+import BaseService from '@/services/Base';
 import { ActionContext } from 'vuex';
 
 interface AuthModule {
@@ -23,7 +25,7 @@ const actions = {
     { commit, dispatch }: ActionContext<AuthModule, never>,
     payload: {}
   ) => {
-    const authService = new AuthService('/login');
+    const authService = new BaseService('/login');
     const res = await authService.post(payload);
     await commit('setToken', res.token);
     await dispatch('getAuthorizationUser');

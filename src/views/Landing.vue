@@ -1,9 +1,17 @@
 <template>
   <div>
-    <navbar />
     <main>
       <div
-        class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75"
+        class="
+          relative
+          pt-16
+          pb-32
+          flex
+          content-center
+          items-center
+          justify-center
+          min-h-screen-75
+        "
       >
         <div
           class="absolute top-0 w-full h-full bg-center bg-cover"
@@ -33,8 +41,18 @@
           </div>
         </div>
         <div
-          class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
-          style="transform: translateZ(0);"
+          class="
+            top-auto
+            bottom-0
+            left-0
+            right-0
+            w-full
+            absolute
+            pointer-events-none
+            overflow-hidden
+            h-70-px
+          "
+          style="transform: translateZ(0)"
         >
           <svg
             class="absolute bottom-0 overflow-hidden"
@@ -58,11 +76,34 @@
           <div class="flex flex-wrap">
             <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
               <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
+                class="
+                  relative
+                  flex flex-col
+                  min-w-0
+                  break-words
+                  bg-white
+                  w-full
+                  mb-8
+                  shadow-lg
+                  rounded-lg
+                "
               >
                 <div class="px-4 py-5 flex-auto">
                   <div
-                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400"
+                    class="
+                      text-white
+                      p-3
+                      text-center
+                      inline-flex
+                      items-center
+                      justify-center
+                      w-12
+                      h-12
+                      mb-5
+                      shadow-lg
+                      rounded-full
+                      bg-red-400
+                    "
                   >
                     <i class="fas fa-award"></i>
                   </div>
@@ -77,11 +118,34 @@
 
             <div class="w-full md:w-4/12 px-4 text-center">
               <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
+                class="
+                  relative
+                  flex flex-col
+                  min-w-0
+                  break-words
+                  bg-white
+                  w-full
+                  mb-8
+                  shadow-lg
+                  rounded-lg
+                "
               >
                 <div class="px-4 py-5 flex-auto">
                   <div
-                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400"
+                    class="
+                      text-white
+                      p-3
+                      text-center
+                      inline-flex
+                      items-center
+                      justify-center
+                      w-12
+                      h-12
+                      mb-5
+                      shadow-lg
+                      rounded-full
+                      bg-lightBlue-400
+                    "
                   >
                     <i class="fas fa-retweet"></i>
                   </div>
@@ -96,11 +160,34 @@
 
             <div class="pt-6 w-full md:w-4/12 px-4 text-center">
               <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
+                class="
+                  relative
+                  flex flex-col
+                  min-w-0
+                  break-words
+                  bg-white
+                  w-full
+                  mb-8
+                  shadow-lg
+                  rounded-lg
+                "
               >
                 <div class="px-4 py-5 flex-auto">
                   <div
-                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400"
+                    class="
+                      text-white
+                      p-3
+                      text-center
+                      inline-flex
+                      items-center
+                      justify-center
+                      w-12
+                      h-12
+                      mb-5
+                      shadow-lg
+                      rounded-full
+                      bg-emerald-400
+                    "
                   >
                     <i class="fas fa-fingerprint"></i>
                   </div>
@@ -117,7 +204,20 @@
           <div class="flex flex-wrap items-center mt-32">
             <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
               <div
-                class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
+                class="
+                  text-blueGray-500
+                  p-3
+                  text-center
+                  inline-flex
+                  items-center
+                  justify-center
+                  w-16
+                  h-16
+                  mb-6
+                  shadow-lg
+                  rounded-full
+                  bg-white
+                "
               >
                 <i class="fas fa-user-friends text-xl"></i>
               </div>
@@ -125,14 +225,28 @@
                 Working with us is a pleasure
               </h3>
               <p
-                class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600"
+                class="
+                  text-lg
+                  font-light
+                  leading-relaxed
+                  mt-4
+                  mb-4
+                  text-blueGray-600
+                "
               >
                 Don't let your uses guess by attaching tooltips and popoves to
                 any element. Just make sure you enable them first via
                 JavaScript.
               </p>
               <p
-                class="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600"
+                class="
+                  text-lg
+                  font-light
+                  leading-relaxed
+                  mt-0
+                  mb-4
+                  text-blueGray-600
+                "
               >
                 The kit comes with three pre-built pages to help you get started
                 faster. You can change the text and images and you're good to
@@ -145,7 +259,18 @@
 
             <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
               <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-emerald-500"
+                class="
+                  relative
+                  flex flex-col
+                  min-w-0
+                  break-words
+                  bg-white
+                  w-full
+                  mb-6
+                  shadow-lg
+                  rounded-lg
+                  bg-emerald-500
+                "
               >
                 <img
                   alt="..."
@@ -181,8 +306,19 @@
 
       <section class="relative py-20">
         <div
-          class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
-          style="transform: translateZ(0);"
+          class="
+            bottom-auto
+            top-0
+            left-0
+            right-0
+            w-full
+            absolute
+            pointer-events-none
+            overflow-hidden
+            -mt-20
+            h-20
+          "
+          style="transform: translateZ(0)"
         >
           <svg
             class="absolute bottom-0 overflow-hidden"
@@ -212,7 +348,20 @@
             <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
               <div class="md:pr-12">
                 <div
-                  class="text-emerald-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-emerald-300"
+                  class="
+                    text-emerald-600
+                    p-3
+                    text-center
+                    inline-flex
+                    items-center
+                    justify-center
+                    w-16
+                    h-16
+                    mb-6
+                    shadow-lg
+                    rounded-full
+                    bg-emerald-300
+                  "
                 >
                   <i class="fas fa-rocket text-xl"></i>
                 </div>
@@ -227,7 +376,18 @@
                     <div class="flex items-center">
                       <div>
                         <span
-                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
+                          class="
+                            text-xs
+                            font-semibold
+                            inline-block
+                            py-1
+                            px-2
+                            uppercase
+                            rounded-full
+                            text-emerald-600
+                            bg-emerald-200
+                            mr-3
+                          "
                         >
                           <i class="fas fa-fingerprint"></i>
                         </span>
@@ -243,15 +403,24 @@
                     <div class="flex items-center">
                       <div>
                         <span
-                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
+                          class="
+                            text-xs
+                            font-semibold
+                            inline-block
+                            py-1
+                            px-2
+                            uppercase
+                            rounded-full
+                            text-emerald-600
+                            bg-emerald-200
+                            mr-3
+                          "
                         >
                           <i class="fab fa-html5"></i>
                         </span>
                       </div>
                       <div>
-                        <h4 class="text-blueGray-500">
-                          Amazing page examples
-                        </h4>
+                        <h4 class="text-blueGray-500">Amazing page examples</h4>
                       </div>
                     </div>
                   </li>
@@ -259,7 +428,18 @@
                     <div class="flex items-center">
                       <div>
                         <span
-                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
+                          class="
+                            text-xs
+                            font-semibold
+                            inline-block
+                            py-1
+                            px-2
+                            uppercase
+                            rounded-full
+                            text-emerald-600
+                            bg-emerald-200
+                            mr-3
+                          "
                         >
                           <i class="far fa-paper-plane"></i>
                         </span>
@@ -299,25 +479,60 @@
                 <div class="pt-6 text-center">
                   <h5 class="text-xl font-bold">Ryan Tompson</h5>
                   <p
-                    class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
+                    class="
+                      mt-1
+                      text-sm text-blueGray-400
+                      uppercase
+                      font-semibold
+                    "
                   >
                     Web Developer
                   </p>
                   <div class="mt-6">
                     <button
-                      class="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-lightBlue-400
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-twitter"></i>
                     </button>
                     <button
-                      class="bg-lightBlue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-lightBlue-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-facebook-f"></i>
                     </button>
                     <button
-                      class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-pink-500
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-dribbble"></i>
@@ -336,19 +551,44 @@
                 <div class="pt-6 text-center">
                   <h5 class="text-xl font-bold">Romina Hadid</h5>
                   <p
-                    class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
+                    class="
+                      mt-1
+                      text-sm text-blueGray-400
+                      uppercase
+                      font-semibold
+                    "
                   >
                     Marketing Specialist
                   </p>
                   <div class="mt-6">
                     <button
-                      class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-red-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-google"></i>
                     </button>
                     <button
-                      class="bg-lightBlue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-lightBlue-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-facebook-f"></i>
@@ -367,25 +607,60 @@
                 <div class="pt-6 text-center">
                   <h5 class="text-xl font-bold">Alexa Smith</h5>
                   <p
-                    class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
+                    class="
+                      mt-1
+                      text-sm text-blueGray-400
+                      uppercase
+                      font-semibold
+                    "
                   >
                     UI/UX Designer
                   </p>
                   <div class="mt-6">
                     <button
-                      class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-red-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-google"></i>
                     </button>
                     <button
-                      class="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-lightBlue-400
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-twitter"></i>
                     </button>
                     <button
-                      class="bg-blueGray-700 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-blueGray-700
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-instagram"></i>
@@ -404,31 +679,76 @@
                 <div class="pt-6 text-center">
                   <h5 class="text-xl font-bold">Jenna Kardi</h5>
                   <p
-                    class="mt-1 text-sm text-blueGray-400 uppercase font-semibold"
+                    class="
+                      mt-1
+                      text-sm text-blueGray-400
+                      uppercase
+                      font-semibold
+                    "
                   >
                     Founder and CEO
                   </p>
                   <div class="mt-6">
                     <button
-                      class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-pink-500
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-dribbble"></i>
                     </button>
                     <button
-                      class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-red-600
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-google"></i>
                     </button>
                     <button
-                      class="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-lightBlue-400
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-twitter"></i>
                     </button>
                     <button
-                      class="bg-blueGray-700 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      class="
+                        bg-blueGray-700
+                        text-white
+                        w-8
+                        h-8
+                        rounded-full
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                      "
                       type="button"
                     >
                       <i class="fab fa-instagram"></i>
@@ -443,8 +763,19 @@
 
       <section class="pb-20 relative block bg-blueGray-800">
         <div
-          class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
-          style="transform: translateZ(0);"
+          class="
+            bottom-auto
+            top-0
+            left-0
+            right-0
+            w-full
+            absolute
+            pointer-events-none
+            overflow-hidden
+            -mt-20
+            h-20
+          "
+          style="transform: translateZ(0)"
         >
           <svg
             class="absolute bottom-0 overflow-hidden"
@@ -465,9 +796,7 @@
         <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
           <div class="flex flex-wrap text-center justify-center">
             <div class="w-full lg:w-6/12 px-4">
-              <h2 class="text-4xl font-semibold text-white">
-                Build something
-              </h2>
+              <h2 class="text-4xl font-semibold text-white">Build something</h2>
               <p class="text-lg leading-relaxed mt-4 mb-4 text-blueGray-400">
                 Put the potentially record low maximum sea ice extent tihs year
                 down to low ice. According to the National Oceanic and
@@ -478,7 +807,18 @@
           <div class="flex flex-wrap mt-12 justify-center">
             <div class="w-full lg:w-3/12 px-4 text-center">
               <div
-                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
+                class="
+                  text-blueGray-800
+                  p-3
+                  w-12
+                  h-12
+                  shadow-lg
+                  rounded-full
+                  bg-white
+                  inline-flex
+                  items-center
+                  justify-center
+                "
               >
                 <i class="fas fa-medal text-xl"></i>
               </div>
@@ -492,7 +832,18 @@
             </div>
             <div class="w-full lg:w-3/12 px-4 text-center">
               <div
-                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
+                class="
+                  text-blueGray-800
+                  p-3
+                  w-12
+                  h-12
+                  shadow-lg
+                  rounded-full
+                  bg-white
+                  inline-flex
+                  items-center
+                  justify-center
+                "
               >
                 <i class="fas fa-poll text-xl"></i>
               </div>
@@ -506,13 +857,22 @@
             </div>
             <div class="w-full lg:w-3/12 px-4 text-center">
               <div
-                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
+                class="
+                  text-blueGray-800
+                  p-3
+                  w-12
+                  h-12
+                  shadow-lg
+                  rounded-full
+                  bg-white
+                  inline-flex
+                  items-center
+                  justify-center
+                "
               >
                 <i class="fas fa-lightbulb text-xl"></i>
               </div>
-              <h5 class="text-xl mt-5 font-semibold text-white">
-                Launch time
-              </h5>
+              <h5 class="text-xl mt-5 font-semibold text-white">Launch time</h5>
               <p class="mt-2 mb-4 text-blueGray-400">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
@@ -526,46 +886,102 @@
           <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
             <div class="w-full lg:w-6/12 px-4">
               <div
-                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200"
+                class="
+                  relative
+                  flex flex-col
+                  min-w-0
+                  break-words
+                  w-full
+                  mb-6
+                  shadow-lg
+                  rounded-lg
+                  bg-blueGray-200
+                "
               >
                 <div class="flex-auto p-5 lg:p-10">
-                  <h4 class="text-2xl font-semibold">
-                    Want to work with us?
-                  </h4>
+                  <h4 class="text-2xl font-semibold">Want to work with us?</h4>
                   <p class="leading-relaxed mt-1 mb-4 text-blueGray-500">
                     Complete this form and we will get back to you in 24 hours.
                   </p>
                   <div class="relative w-full mb-3 mt-8">
                     <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                      class="
+                        block
+                        uppercase
+                        text-blueGray-600 text-xs
+                        font-bold
+                        mb-2
+                      "
                       htmlFor="full-name"
                     >
                       Full Name
                     </label>
                     <input
                       type="text"
-                      class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                      class="
+                        border-0
+                        px-3
+                        py-3
+                        placeholder-blueGray-300
+                        text-blueGray-600
+                        bg-white
+                        rounded
+                        text-sm
+                        shadow
+                        focus:outline-none focus:ring
+                        w-full
+                        ease-linear
+                        transition-all
+                        duration-150
+                      "
                       placeholder="Full Name"
                     />
                   </div>
 
                   <div class="relative w-full mb-3">
                     <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                      class="
+                        block
+                        uppercase
+                        text-blueGray-600 text-xs
+                        font-bold
+                        mb-2
+                      "
                       htmlFor="email"
                     >
                       Email
                     </label>
                     <input
                       type="email"
-                      class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                      class="
+                        border-0
+                        px-3
+                        py-3
+                        placeholder-blueGray-300
+                        text-blueGray-600
+                        bg-white
+                        rounded
+                        text-sm
+                        shadow
+                        focus:outline-none focus:ring
+                        w-full
+                        ease-linear
+                        transition-all
+                        duration-150
+                      "
                       placeholder="Email"
                     />
                   </div>
 
                   <div class="relative w-full mb-3">
                     <label
-                      class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                      class="
+                        block
+                        uppercase
+                        text-blueGray-600 text-xs
+                        font-bold
+                        mb-2
+                      "
                       htmlFor="message"
                     >
                       Message
@@ -573,13 +989,44 @@
                     <textarea
                       rows="4"
                       cols="80"
-                      class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                      class="
+                        border-0
+                        px-3
+                        py-3
+                        placeholder-blueGray-300
+                        text-blueGray-600
+                        bg-white
+                        rounded
+                        text-sm
+                        shadow
+                        focus:outline-none focus:ring
+                        w-full
+                      "
                       placeholder="Type a message..."
                     />
                   </div>
                   <div class="text-center mt-6">
                     <button
-                      class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      class="
+                        bg-blueGray-800
+                        text-white
+                        active:bg-blueGray-600
+                        text-sm
+                        font-bold
+                        uppercase
+                        px-6
+                        py-3
+                        rounded
+                        shadow
+                        hover:shadow-lg
+                        outline-none
+                        focus:outline-none
+                        mr-1
+                        mb-1
+                        ease-linear
+                        transition-all
+                        duration-150
+                      "
                       type="button"
                     >
                       Send Message
@@ -596,13 +1043,12 @@
   </div>
 </template>
 <script>
-import Navbar from "@/components/Navbars/AuthNavbar.vue";
-import FooterComponent from "@/components/Footers/Footer.vue";
+import FooterComponent from '@/components/Footers/Footer.vue';
 
-import team1 from "@/assets/img/team-1-800x800.jpg";
-import team2 from "@/assets/img/team-2-800x800.jpg";
-import team3 from "@/assets/img/team-3-800x800.jpg";
-import team4 from "@/assets/img/team-4-470x470.png";
+import team1 from '@/assets/img/team-1-800x800.jpg';
+import team2 from '@/assets/img/team-2-800x800.jpg';
+import team3 from '@/assets/img/team-3-800x800.jpg';
+import team4 from '@/assets/img/team-4-470x470.png';
 
 export default {
   data() {
@@ -614,7 +1060,6 @@ export default {
     };
   },
   components: {
-    Navbar,
     FooterComponent,
   },
 };
