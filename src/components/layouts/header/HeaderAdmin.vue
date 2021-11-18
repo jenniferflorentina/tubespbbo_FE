@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-5">
+  <v-card>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant.sync="mini"
@@ -33,10 +33,9 @@
 
       <template v-slot:append>
         <v-list dense>
-          <v-list-item>
+          <v-list-item class="my-2">
             <v-list-item-icon>
-              <v-icon color="white">mdi-calendar</v-icon
-              ><!--todo change icon-->
+              <v-icon color="white">mdi-logout</v-icon>
             </v-list-item-icon>
             <v-list-item-content color="white">
               <v-list-item-title color="white">Logout</v-list-item-title>
@@ -55,10 +54,10 @@ export default {
       drawer: true,
       items: [
         { title: 'Home', icon: 'mdi-home' },
-        { title: 'Expense', icon: 'mdi-account' },
-        { title: 'Transaction', icon: 'mdi-account-group-outline' }, //todo bantu cari iconnya jaringan saya buriq bat :)
-        { title: 'Product Stock', icon: 'mdi-account-group-outline' },
-        { title: 'General Ledger', icon: 'mdi-account-group-outline' },
+        { title: 'Expense', icon: 'mdi-wallet' },
+        { title: 'Transaction', icon: 'mdi-script-text' },
+        { title: 'Product Stock', icon: 'mdi-cube-outline' },
+        { title: 'General Ledger', icon: 'mdi-finance' },
       ],
       mini: true,
     };
