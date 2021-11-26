@@ -27,7 +27,7 @@ const actions = {
   ) => {
     const authService = new BaseService('/login');
     const res = await authService.post(payload);
-    await commit('setToken', res.token);
+    await commit('setToken', res.data);
     await dispatch('getAuthorizationUser');
   },
   signOut: async ({ commit }: ActionContext<AuthModule, never>) => {
@@ -40,9 +40,9 @@ const actions = {
   getAuthorizationUser: async ({
     commit,
   }: ActionContext<AuthModule, never>) => {
-    const userService = new BaseService('/login');
+    const userService = new BaseService('/me');
     const resUser = await userService.get('');
-    commit('setAuthenticatedUser', resUser);
+    commit('setAuthenticatedUser', resUser.data);
   },
 };
 
