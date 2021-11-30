@@ -20,7 +20,7 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item v-for="item in items" :key="item.title" link @click="changePage(item.to)">
           <v-list-item-icon>
             <v-icon color="#f4f4f4">{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -47,22 +47,29 @@
   </v-card>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
   data() {
     return {
       drawer: true,
       items: [
-        { title: 'Home', icon: 'mdi-home' },
-        { title: 'Expense', icon: 'mdi-wallet' },
-        { title: 'Transaction', icon: 'mdi-script-text' },
-        { title: 'Product Stock', icon: 'mdi-cube-outline' },
-        { title: 'General Ledger', icon: 'mdi-finance' },
+        { title: 'Home', icon: 'mdi-home' , to:'/admin/index'},
+        { title: 'Expenses', icon: 'mdi-wallet', to:'/admin/expenses'},
+        { title: 'Transaction', icon: 'mdi-script-text', to:'/admin/index' },
+        { title: 'Product Stock', icon: 'mdi-cube-outline', to:'/admin/products' },
+        { title: 'General Ledger', icon: 'mdi-finance', to:'/admin/index'},
       ],
       mini: true,
     };
   },
-};
+  methods:{
+    changePage(to: string){
+      this.$router.push(to);
+    }
+  }
+});
 </script>
 
 <style>

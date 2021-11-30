@@ -29,7 +29,6 @@
               fab
               dark
               color="black"
-              @click="reserve"
               rounded
               ><v-icon> mdi-cart</v-icon>
             </v-btn>

@@ -13,7 +13,7 @@
               id="auth-login-input-username"
               v-model="username"
               label="Username"
-              :rules="[validation.required(userLabel)]"
+              :rules="[validation.required('Username')]"
               class="mt-4 custom-validation"
               outlined
             />
@@ -22,7 +22,7 @@
               v-model="password"
               label="Password"
               :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-              :rules="[validation.required(passLabel)]"
+              :rules="[validation.required('Password')]"
               :type="showPassword ? 'text' : 'password'"
               class="custom-validation"
               outlined
@@ -40,7 +40,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import HeaderComponent from '@/components/layouts/header/HeaderUser.vue';
 import validation from '@/validation';
 
@@ -55,10 +55,12 @@ export default Vue.extend({
     showPassword: false,
     validation,
   }),
+  computed: {
+    ...mapGetters(['token', 'authenticatedUser']),
+  },
   methods: {
     ...mapActions([
       'signIn',
-      'getAuthorizationUser',
       'setLoading',
       'setSnackbar',
     ]),
@@ -73,7 +75,13 @@ export default Vue.extend({
 
       try {
         await this.signIn(payload);
-        this.$router.push('/');
+        if(this.token){
+          if(this.authenticatedUser.role === 0){
+            this.$router.push('/');
+          }else{
+            this.$router.push('/admin/index');
+          }
+        }
         this.setLoading(false);
       } catch (e) {
         this.setLoading(false);
