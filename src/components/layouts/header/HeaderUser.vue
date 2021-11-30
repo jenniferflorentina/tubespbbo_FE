@@ -48,15 +48,6 @@
           </v-list-item>
           <!---End User info -->
           <v-divider></v-divider>
-
-          <v-list-item
-            v-for="(item, i) in userprofile"
-            :key="i"
-            color="primary"
-            @click="onClickHandler(item)"
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
         </v-list>
       </v-menu>
     </div>
