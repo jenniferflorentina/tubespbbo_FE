@@ -41,7 +41,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapActions, mapGetters } from 'vuex';
-import HeaderComponent from '@/components/layouts/header/HeaderUser.vue';
+import HeaderComponent from '@/components/layouts/full-layout-user/header/Header.vue';
 import validation from '@/validation';
 
 export default Vue.extend({
@@ -59,11 +59,7 @@ export default Vue.extend({
     ...mapGetters(['token', 'authenticatedUser']),
   },
   methods: {
-    ...mapActions([
-      'signIn',
-      'setLoading',
-      'setSnackbar',
-    ]),
+    ...mapActions(['signIn', 'setLoading', 'setSnackbar']),
     async submit() {
       if (!this.validate()) return;
       this.setLoading(true);
@@ -75,10 +71,10 @@ export default Vue.extend({
 
       try {
         await this.signIn(payload);
-        if(this.token){
-          if(this.authenticatedUser.role === 0){
-            this.$router.push('/');
-          }else{
+        if (this.token) {
+          if (this.authenticatedUser.role === 0) {
+            this.$router.push('/user/index');
+          } else {
             this.$router.push('/admin/index');
           }
         }

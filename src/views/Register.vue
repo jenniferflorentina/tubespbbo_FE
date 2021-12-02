@@ -87,7 +87,7 @@ import Vue from 'vue';
 import { mapActions } from 'vuex';
 import moment from 'moment';
 import BaseService from '@/services/Base';
-import HeaderComponent from '@/components/layouts/header/HeaderUser.vue';
+import HeaderComponent from '@/components/layouts/full-layout-user/header/Header.vue';
 import { Users } from '@/types/User';
 
 export default Vue.extend({
@@ -100,6 +100,7 @@ export default Vue.extend({
     payload: {} as Users,
     modalDob: false,
     formattedDob: '',
+    showPassword: false,
   }),
 
   async created() {
@@ -138,7 +139,7 @@ export default Vue.extend({
           message: 'Welcome To Calleryna :)',
           color: 'success',
         });
-        this.$router.push(`/auth/login`);
+        this.$router.push('/auth/login');
         this.setLoading(false);
       } catch (e) {
         this.setLoading(false);
