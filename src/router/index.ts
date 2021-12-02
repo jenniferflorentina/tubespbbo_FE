@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import store from '@/store/index';
 
 // layouts
 
@@ -29,8 +28,15 @@ Vue.use(VueRouter);
 const routes: Array<RouteConfig> = [
   {
     path: '/admin',
-    component:Admin,
+    component: Admin,
     children: [
+      {
+        path: '/admin/index',
+        component: () =>
+          import(
+            /* webpackChunkName: "adminIndex" */ '@/views/admin/Index.vue'
+          ),
+      },
       {
         path: '/admin/dashboard',
         component: Dashboard,
@@ -42,16 +48,16 @@ const routes: Array<RouteConfig> = [
       {
         path: '/admin/expenses',
         component: () =>
-        import(
-          /* webpackChunkName: "adminExpenses" */ '@/views/admin/expenses/Index.vue'
-        ),
+          import(
+            /* webpackChunkName: "adminExpenses" */ '@/views/admin/expenses/Index.vue'
+          ),
       },
       {
         path: '/admin/products',
         component: () =>
-        import(
-          /* webpackChunkName: "adminProducts" */ '@/views/admin/products/Index.vue'
-        ),
+          import(
+            /* webpackChunkName: "adminProducts" */ '@/views/admin/products/Index.vue'
+          ),
       },
     ],
   },
