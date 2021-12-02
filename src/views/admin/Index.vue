@@ -1,71 +1,68 @@
 <template>
-  <div>
-    <v-breadcrumbs class="container">
-      <header-component />
-      <v-row class="d-flex" style="min-height: calc(100vh - 2rem)">
-        <v-col col="12" sm="8">
-          <v-card color="#385F73" dark class="ml-3 pa-2 rounded-xl">
-            <v-card-title class="text-h1"> Hello Josh! </v-card-title>
+  <v-breadcrumbs class="container">
+    <v-row class="d-flex flex-column ml-8 w-100">
+      <v-col col="12">
+        <v-card color="#385F73" dark class="pa-2 rounded-xl">
+          <v-card-title class="text-h1"> Hello Josh! </v-card-title>
 
-            <v-card-subtitle class="text-h4"
-              >Welcome to Calleryna ~~
-            </v-card-subtitle>
+          <v-card-subtitle class="text-h4"
+            >Welcome to Calleryna ~~
+          </v-card-subtitle>
+        </v-card>
+      </v-col>
+      <v-col col="12" style="min-height: calc(100vh - 12rem)">
+        <v-card elevation="2" outlined shaped>
+          <v-card-title class="text-h2"> Pesanan </v-card-title>
+          <div>
+            <v-tabs v-model="tab" background-color="white" @change="refresh">
+              <v-tab v-for="tabItem in tabItems" :key="tabItem">
+                {{ tabItem }}
+              </v-tab>
+            </v-tabs>
+          </div>
+          <v-card v-for="(item, index) in items" :key="index">
+            <v-row no-gutters>
+              <v-col cols="1" align-self="center" class="ml-2">
+                <v-avatar size="40">
+                  <img
+                    alt="Joan"
+                    src="https://randomuser.me/api/portraits/women/55.jpg"
+                  />
+                </v-avatar>
+              </v-col>
+              <v-col cols="2">
+                <v-card-text>
+                  {{ item.userId }}
+                </v-card-text>
+              </v-col>
+              <v-col align-self="center">
+                <v-icon>mdi-calendar</v-icon>
+                {{ formatDate(item.transactionDate) }}
+              </v-col>
+              <v-col cols="2" align-self="center" class="float:right;">
+                <v-btn outlined @click="openDetailForm(item, 'detail')">
+                  Detail
+                </v-btn>
+              </v-col>
+            </v-row>
           </v-card>
-        </v-col>
-        <v-col col="12" sm="8" style="min-height: calc(100vh - 12rem)">
-          <v-card class="ml-3" elevation="2" outlined shaped>
-            <v-card-title class="text-h2"> Pesanan </v-card-title>
-            <div>
-              <v-tabs
-                v-model="tab"
-                background-color="white"
-                @change="filteredItems"
-              >
-                <v-tab v-for="tabItem in tabItems" :key="tabItem">
-                  {{ tabItem }}
-                </v-tab>
-              </v-tabs>
-            </div>
-            <v-card v-for="(item, index) in items" :key="index">
-              <v-row no-gutters>
-                <v-col cols="1" align-self="center" class="ml-2">
-                  <v-avatar size="40">
-                    <img
-                      alt="Joan"
-                      src="https://randomuser.me/api/portraits/women/55.jpg"
-                    />
-                  </v-avatar>
-                </v-col>
-                <v-col cols="2">
-                  <v-card-text>
-                    {{ item.userId }}
-                  </v-card-text>
-                </v-col>
-                <v-col align-self="center">
-                  <v-icon>mdi-calendar</v-icon>
-                  {{ item.transactionDate }}
-                </v-col>
-                <v-col cols="2" justify="end">
-                  <v-btn outlined> Detail </v-btn>
-                </v-col>
-              </v-row>
-            </v-card>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-breadcrumbs>
-  </div>
+        </v-card>
+      </v-col>
+    </v-row>
+    <DetailDialog ref="openTransactionDialog" :refresh="refresh" />
+  </v-breadcrumbs>
 </template>
 <script lang="ts">
 import Vue from 'vue';
 import { mapActions } from 'vuex';
-import HeaderComponent from '@/components/layouts/header/HeaderAdmin.vue';
+import moment from 'moment';
+import DetailDialog from '@/views/admin/DetailTransactionDialog.vue';
 import BaseService from '@/services/Base';
 
 export default Vue.extend({
   name: 'IndexAdmin',
   components: {
-    HeaderComponent,
+    DetailDialog,
   },
 
   data: () => ({
@@ -102,27 +99,29 @@ export default Vue.extend({
       this.setLoading(true);
       const service = new BaseService('/transactions');
       const res = await service.get(params);
-      this.items = res.data;
+      switch (this.tab) {
+        case 1:
+          this.items = res.data.filter((item) => item.status === 'Proses');
+          break;
+        case 2:
+          this.items = res.data.filter(
+            (item) => item.status === 'Belum Proses'
+          );
+          break;
+        default:
+          this.items = res.data.filter((item) => item.status === 'Selesai');
+          break;
+      }
       this.$forceUpdate();
     },
 
-    // filteredItems() {
-    //   const tabObj = {
-    //     0: 'search=status.status:"Selesai"',
-    //     1: 'search=status.status:"Proses"',
-    //     2: 'search=status.status:"Belum Proses"',
-    //   };
+    openDetailForm(item, type) {
+      const { openTransactionDialog }: any = this.$refs;
+      openTransactionDialog.startForm(item, type);
+    },
 
-    //   this.request(tabObj[this.tab]);
-    // },
-
-    formatCurrency(value) {
-      const formatter = new Intl.NumberFormat('id-ID', {
-        style: 'currency',
-        currency: 'IDR',
-        minimumSignificantDigits: 1,
-      });
-      return formatter.format(value);
+    formatDate(date) {
+      return moment(date).format('DD-MM-YYYY');
     },
   },
 });
