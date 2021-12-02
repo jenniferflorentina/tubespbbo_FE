@@ -1,9 +1,8 @@
 <template>
   <div>
-    <header-component />
     <v-container fill-height>
       <v-card
-        class="mx-auto my-12"
+        class="mx-auto"
         max-width="374"
         v-for="(item, index) in items"
         :key="index"
@@ -24,12 +23,7 @@
         <v-row justify="end">
           <v-card-title>{{ formatCurrency(item.price) }}</v-card-title>
           <v-card-actions>
-            <v-btn
-              class="my-4 mr-5"
-              fab
-              dark
-              color="black"
-              rounded
+            <v-btn class="my-4 mr-5" fab dark color="black" rounded
               ><v-icon> mdi-cart</v-icon>
             </v-btn>
           </v-card-actions>
@@ -41,15 +35,10 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapActions } from 'vuex';
-import HeaderComponent from '@/components/layouts/header/HeaderUser.vue';
 import BaseService from '@/services/Base';
 
 export default Vue.extend({
   name: 'Index',
-  components: {
-    HeaderComponent,
-  },
-
   data: () => ({
     // Data General,
     items: [] as any[],

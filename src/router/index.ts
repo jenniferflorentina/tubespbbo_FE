@@ -4,12 +4,7 @@ import VueRouter, { RouteConfig } from 'vue-router';
 // layouts
 
 import Admin from '@/components/layouts/full-layout/Layout.vue';
-import Auth from '@/layouts/Auth.vue';
-
-// views for Admin layout
-
-import Dashboard from '@/views/admin/Dashboard.vue';
-import Settings from '@/views/admin/Settings.vue';
+import User from '@/components/layouts/full-layout-user/Layout.vue';
 
 // views for Auth layout
 
@@ -17,11 +12,7 @@ import Login from '@/views/LoginPage.vue';
 import Register from '@/views/Register.vue';
 
 // views without layouts
-
-import Landing from '@/views/Landing.vue';
-import Profile from '@/views/Profile.vue';
-import Index from '@/views/user/Index.vue';
-import IndexAdmin from '@/views/admin/Index.vue';
+import LandingPage from '@/views/Landing.vue';
 
 Vue.use(VueRouter);
 
@@ -36,14 +27,6 @@ const routes: Array<RouteConfig> = [
           import(
             /* webpackChunkName: "adminIndex" */ '@/views/admin/Index.vue'
           ),
-      },
-      {
-        path: '/admin/dashboard',
-        component: Dashboard,
-      },
-      {
-        path: '/admin/settings',
-        component: Settings,
       },
       {
         path: '/admin/expenses',
@@ -69,34 +52,27 @@ const routes: Array<RouteConfig> = [
     ],
   },
   {
-    path: '/auth',
-    component: Auth,
+    path: '/user',
+    component: User,
     children: [
       {
-        path: '/auth/login',
-        component: Login,
-      },
-      {
-        path: '/auth/register',
-        component: Register,
+        path: '/user/index',
+        component: () =>
+          import(/* webpackChunkName: "adminIndex" */ '@/views/user/Index.vue'),
       },
     ],
   },
   {
-    path: '/landing',
-    component: Landing,
+    path: '/login',
+    component: Login,
   },
   {
-    path: '/profile',
-    component: Profile,
+    path: '/register',
+    component: Register,
   },
   {
     path: '/',
-    component: Index,
-  },
-  {
-    path: '/admin/index',
-    component: IndexAdmin,
+    component: LandingPage,
   },
 ];
 
