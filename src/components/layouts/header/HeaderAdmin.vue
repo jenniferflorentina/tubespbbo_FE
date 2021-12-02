@@ -1,5 +1,4 @@
 <template>
-  <v-card>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant.sync="mini"
@@ -44,7 +43,6 @@
         </v-list>
       </template>
     </v-navigation-drawer>
-  </v-card>
 </template>
 
 <script lang="ts">
@@ -72,7 +70,7 @@ export default Vue.extend({
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
 .v-list-item {
   color: #f4f4f4 !important;
 }

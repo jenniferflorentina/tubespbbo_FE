@@ -4,7 +4,7 @@ import store from '@/store/index';
 
 // layouts
 
-import Admin from '@/layouts/Admin.vue';
+import Admin from '@/components/layouts/full-layout/Layout.vue';
 import Auth from '@/layouts/Auth.vue';
 
 // views for Admin layout
