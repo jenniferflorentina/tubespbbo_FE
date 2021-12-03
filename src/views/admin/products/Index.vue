@@ -5,6 +5,11 @@
         <h1>Products</h1>
       </v-col>
       <v-col cols="12">
+        <v-tabs v-model="tab" background-color="white" @change="refresh">
+          <v-tab v-for="tabItem in tabItems" :key="tabItem">
+            {{ tabItem }}
+          </v-tab>
+        </v-tabs>
         <v-btn
           style="float: right"
           color="primary"
@@ -40,13 +45,13 @@
 
         <v-row justify="center">
           <v-card-actions>
-            <v-btn class="my-4" fab rounded small @click="changeQuantity(item, false)"
+            <v-btn v-if="item.quantity>0" class="my-4" fab icon rounded small @click="changeQuantity(item, false)"
               ><v-icon> mdi-minus</v-icon>
             </v-btn>
             <v-btn class="my-4" fab dark color="black" rounded
               >{{item.quantity}}
             </v-btn>
-            <v-btn class="my-4" fab rounded small @click="changeQuantity(item, true)"
+            <v-btn class="my-4" fab rounded small icon @click="changeQuantity(item, true)"
               ><v-icon> mdi-plus</v-icon>
             </v-btn>
           </v-card-actions>
@@ -76,6 +81,8 @@ export default Vue.extend({
     // Data General,
     items: [] as any[],
     service : new BaseService('/products'),
+    tabItems: ['Tersedia', 'Habis'],
+    tab: 0,
     createFields: {
       name: {
         label: 'Nama Produk',
@@ -140,7 +147,15 @@ export default Vue.extend({
     async request(params) {
       this.setLoading(true);
       const res = await this.service.get(params);
-      this.items = res.data;
+      switch (this.tab) {
+        case 1:
+          this.items = res.data.filter((item) => item.quantity === 0);
+          break;
+      
+        default:
+          this.items = res.data.filter((item) => item.quantity > 0);
+          break;
+      }
       this.$forceUpdate();
     },
 
