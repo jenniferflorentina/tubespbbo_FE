@@ -5,7 +5,50 @@
         <h1>Reports</h1>
       </v-col>
       <v-col cols="12">
-        
+        <v-menu
+          ref="menu"
+          v-model="menu"
+          :close-on-content-click="false"
+          :return-value.sync="picker"
+          transition="scale-transition"
+          offset-y
+          max-width="290px"
+          min-width="auto"
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-text-field
+              v-model="format"
+              label="Choose Month"
+              prepend-icon="mdi-calendar"
+              readonly
+              v-bind="attrs"
+              v-on="on"
+            ></v-text-field>
+          </template>
+          <v-date-picker
+            v-model="picker"
+            type="month"
+            color="#385F73"
+            no-title
+            scrollable
+          >
+            <v-spacer></v-spacer>
+            <v-btn
+              text
+              color="#385F73"
+              @click="menu = false"
+            >
+              Cancel
+            </v-btn>
+            <v-btn
+              text
+              color="#385F73"
+              @click="refresh"
+            >
+              OK
+            </v-btn>
+          </v-date-picker>
+        </v-menu>
       </v-col>
     </v-row>
     <v-row class="d-flex ml-8 w-100" justify="start">
@@ -63,6 +106,9 @@ export default Vue.extend({
     service : new BaseService('/reports'),
     month : new Date().getUTCMonth()+1,
     year : new Date().getUTCFullYear(),
+    picker: '',
+    format: moment(new Date()).format("MMMM YYYY"),
+    menu: false,
     totalDebit: 0,
     totalCredit: 0,
     headers: [
@@ -105,9 +151,22 @@ export default Vue.extend({
     this.setLoading(false);
   },
 
+  watch: {
+    picker: {
+      async handler() {
+        if (this.picker !== '') {
+          this.month = Number(this.picker.substring(5,7));
+          this.year = Number(this.picker.substring(0,4));
+          this.format = moment(this.picker).format('MMMM YYYY');
+        }
+      },
+    },
+  },
+
   methods: {
     ...mapActions(['setLoading', 'setSnackbar']),
     async refresh() {
+      this.menu = false;
       try {
         await this.request(`year=${this.year}&month=${this.month}`);
       } catch (e) {
