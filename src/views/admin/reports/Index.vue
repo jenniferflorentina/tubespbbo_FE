@@ -38,6 +38,13 @@
           </template>
         </v-data-table>
       </v-card>
+      <v-card color="#385F73" dark class="pa-2 mt-8 rounded-xl">
+        <v-card-title class="text-h1"> Saldo Akhir </v-card-title>
+
+        <v-card-subtitle class="text-h2"
+          >{{formatCurrency(totalDebit-totalCredit)}}
+        </v-card-subtitle>
+      </v-card>
     </v-row>
   </v-breadcrumbs>
 </template>
