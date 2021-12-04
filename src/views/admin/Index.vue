@@ -3,7 +3,7 @@
     <v-row class="d-flex flex-column ml-8 w-100">
       <v-col col="12">
         <v-card color="#385F73" dark class="pa-2 rounded-xl">
-          <v-card-title class="text-h1"> Hello Josh! </v-card-title>
+          <v-card-title class="text-h1"> Hello {{authenticatedUser.name}}! </v-card-title>
 
           <v-card-subtitle class="text-h4"
             >Welcome to Calleryna ~~
@@ -54,7 +54,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { mapActions } from 'vuex';
+import { mapActions , mapGetters } from 'vuex';
 import moment from 'moment';
 import DetailDialog from '@/views/admin/DetailTransactionDialog.vue';
 import BaseService from '@/services/Base';
@@ -78,6 +78,9 @@ export default Vue.extend({
     this.setLoading(true);
     await this.refresh();
     this.setLoading(false);
+  },
+  computed: {
+    ...mapGetters(['authenticatedUser']),
   },
 
   methods: {
