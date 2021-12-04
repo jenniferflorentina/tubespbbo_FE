@@ -156,6 +156,11 @@ export default Vue.extend({
           this.items = res.data.filter((item) => item.quantity > 0);
           break;
       }
+      if(this.items.length>0){
+        this.items.sort(function(a : any,b: any){
+          return a.id - b.id;         
+        });
+      }
       this.$forceUpdate();
     },
 

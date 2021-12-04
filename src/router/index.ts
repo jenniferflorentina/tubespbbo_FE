@@ -49,6 +49,13 @@ const routes: Array<RouteConfig> = [
             /* webpackChunkName: "adminProducts" */ '@/views/admin/products/Index.vue'
           ),
       },
+      {
+        path: '/admin/reports',
+        component: () =>
+          import(
+            /* webpackChunkName: "adminProducts" */ '@/views/admin/reports/Index.vue'
+          ),
+      },
     ],
   },
   {

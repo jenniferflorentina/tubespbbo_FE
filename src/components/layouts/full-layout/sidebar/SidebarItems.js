@@ -3,5 +3,5 @@ export default [
   { title: 'Expenses', icon: 'mdi-wallet', to: '/admin/expenses' },
   { title: 'Transaction', icon: 'mdi-script-text', to: '/admin/transactions' },
   { title: 'Product Stock', icon: 'mdi-cube-outline', to: '/admin/products' },
-  { title: 'General Ledger', icon: 'mdi-finance', to: '/admin/index' },
+  { title: 'General Ledger', icon: 'mdi-finance', to: '/admin/reports' },
 ];
