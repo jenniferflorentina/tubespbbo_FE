@@ -139,7 +139,7 @@ export default Vue.extend({
           message: 'Welcome To Calleryna :)',
           color: 'success',
         });
-        this.$router.push('/auth/login');
+        this.$router.push('/login');
         this.setLoading(false);
       } catch (e) {
         this.setLoading(false);

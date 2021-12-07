@@ -1,5 +1,12 @@
 <template>
-  <v-app-bar :color="navbarColor" dense app clipped-left clipped-right>
+  <v-app-bar
+    class="p-2"
+    :color="navbarColor"
+    dense
+    app
+    clipped-left
+    clipped-right
+  >
     <div>
       <v-btn text>Bunga</v-btn>
       <v-btn text>Bibit Bunga</v-btn>
@@ -38,12 +45,25 @@
             </v-list-item-avatar>
 
             <v-list-item-content>
-              <v-list-item-title>Eirenika Joanna</v-list-item-title>
-              <v-list-item-subtitle>User</v-list-item-subtitle>
+              <v-list-item-title>{{
+                authenticatedUser.name
+              }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           <!---End User info -->
           <v-divider></v-divider>
+          <v-list-item
+            v-for="(item, i) in userprofile"
+            :key="i"
+            @click="onClickHandler(item)"
+          >
+            <v-list-item-icon>
+              <v-icon> {{ item.icon }} </v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
         </v-list>
       </v-menu>
     </div>
@@ -51,7 +71,7 @@
 </template>
 <script>
 // Utilities
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'VerticalHeader',
@@ -62,15 +82,37 @@ export default {
       default: false,
     },
   },
+  data: () => ({
+    userprofile: [
+      {
+        icon: 'mdi-history',
+        title: 'Pesanan',
+        to: '/user/index',
+      },
+      {
+        icon: 'mdi-logout',
+        title: 'Sign Out',
+        to: '/',
+      },
+    ],
+  }),
 
   computed: {
     ...mapState(['navbarColor', 'sidebarDrawer']),
+    ...mapGetters(['authenticatedUser']),
   },
 
   methods: {
     ...mapActions(['signOut']),
     showhideLogo() {
       this.showLogo = !this.showLogo;
+    },
+
+    onClickHandler({ title, to }) {
+      if (title === 'Sign Out') {
+        this.signOut();
+      }
+      this.$router.push(to);
     },
   },
 };
