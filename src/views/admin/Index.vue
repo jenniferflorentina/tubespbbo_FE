@@ -3,7 +3,9 @@
     <v-row class="d-flex flex-column ml-8 w-100">
       <v-col col="12">
         <v-card color="#385F73" dark class="pa-2 rounded-xl">
-          <v-card-title class="text-h1"> Hello {{authenticatedUser.name}}! </v-card-title>
+          <v-card-title class="text-h1">
+            Hello {{ authenticatedUser.name }}!
+          </v-card-title>
 
           <v-card-subtitle class="text-h4"
             >Welcome to Calleryna ~~
@@ -37,7 +39,7 @@
               </v-col>
               <v-col align-self="center">
                 <v-icon>mdi-calendar</v-icon>
-                {{ formatDate(item.transactionDate) }}
+                {{ formatDate(item.createdAt) }}
               </v-col>
               <v-col cols="2" align-self="center" class="float:right;">
                 <v-btn outlined @click="openDetailForm(item, 'detail')">
@@ -49,12 +51,16 @@
         </v-card>
       </v-col>
     </v-row>
-    <DetailDialog ref="openTransactionDialog" :refresh="refresh" />
+    <DetailDialog
+      ref="openTransactionDialog"
+      :refresh="refresh"
+      :formatDate="formatDate"
+    />
   </v-breadcrumbs>
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { mapActions , mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import moment from 'moment';
 import DetailDialog from '@/views/admin/DetailTransactionDialog.vue';
 import BaseService from '@/services/Base';
@@ -68,7 +74,7 @@ export default Vue.extend({
   data: () => ({
     // Data General,
     items: [] as any[],
-    tabItems: ['Selesai', 'Proses', 'Belum Proses'],
+    tabItems: ['Selesai', 'Proses', 'Belum Proses', 'Belum Terverifikasi'],
     tab: 0,
     service: new BaseService(),
     user: [] as any[],
@@ -109,6 +115,11 @@ export default Vue.extend({
         case 2:
           this.items = res.data.filter(
             (item) => item.status === 'Belum Proses'
+          );
+          break;
+        case 3:
+          this.items = res.data.filter(
+            (item) => item.status === 'Belum Terverifikasi'
           );
           break;
         default:

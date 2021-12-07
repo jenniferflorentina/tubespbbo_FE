@@ -27,8 +27,8 @@
             </v-col>
             <v-col class="mt-1 pb-0" cols="4">
               <v-text-field
-                v-model="createFields.transactionDate.value"
-                :label="createFields.transactionDate.label"
+                v-model="createFields.createdAt.value"
+                :label="createFields.createdAt.label"
                 :disabled="isFormDisabled"
                 outlined
               ></v-text-field>
@@ -96,14 +96,14 @@ import { mapActions } from 'vuex';
 
 export default Vue.extend({
   name: 'DetailDialog',
-  props: ['refresh'],
+  props: ['refresh', 'formatDate'],
   data: () => ({
     isOpen: false,
     transactionId: '',
     transactionDetails: [] as any,
     type: '',
     createFields: {
-      transactionDate: {
+      createdAt: {
         label: 'Transaction Date',
         type: 'string',
         value: '',
@@ -171,15 +171,10 @@ export default Vue.extend({
 
     fillForm(item: any) {
       if (!item) return;
-      const {
-        transactionDate,
-        receiptNumber,
-        status,
-        payment,
-        transactionDetails,
-      } = item;
+      const { createdAt, receiptNumber, status, payment, transactionDetails } =
+        item;
       const dataObj = {
-        transactionDate,
+        createdAt,
         receiptNumber,
         status,
         amount: payment.amount,
@@ -193,6 +188,9 @@ export default Vue.extend({
         switch (key) {
           case 'product':
             this.transactionDetails = dataObj.product;
+            break;
+          case 'createdAt':
+            this.createFields[key].value = this.formatDate(dataObj[key]);
             break;
           default:
             this.createFields[key].value = dataObj[key];
