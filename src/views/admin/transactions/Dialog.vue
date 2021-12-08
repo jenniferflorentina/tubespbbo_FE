@@ -7,7 +7,7 @@
   >
     <v-card class="pb-4">
       <v-toolbar class="px-4">
-        <v-toolbar-title>{{ title }} Transaction</v-toolbar-title>
+        <v-toolbar-title> Transaction</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn
           class="mx-2"
@@ -21,6 +21,99 @@
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-toolbar>
+
+      <v-card-text class="mb-4 mt-6">
+        <v-form class="px-4" ref="form" @submit.prevent="save()">
+          <v-row align="center" justify="center">
+            <v-col class="pt-4 pb-0" cols="12" lg="12">
+              <v-text-field
+                v-model="createFields.nama.value"
+                :label="createFields.nama.label"
+                outlined
+                disabled
+              ></v-text-field>
+            </v-col>
+            <v-col class="pt-4 pb-0" cols="12" lg="12">
+              <v-text-field
+                v-model="createFields.address.value"
+                :label="createFields.address.label"
+                outlined
+                disabled
+              ></v-text-field>
+            </v-col>
+            <v-col class="pt-4 pb-0" cols="12" lg="12">
+              <v-select
+                v-model="createFields.status.value"
+                :items="createFields.status.items"
+                :label="createFields.status.label"
+                :rules="createFields.status.rules"
+                :disabled="isFormDisabled"
+                outlined
+              />
+            </v-col>
+            <v-col class="pt-4 pb-0" cols="12" lg="12">
+              <v-text-field
+                v-model="createFields.receiptNumber.value"
+                :label="createFields.receiptNumber.label"
+                :rules="createFields.receiptNumber.rules"
+                :disabled="isFormDisabled"
+                outlined
+              ></v-text-field>
+            </v-col>
+            <v-col class="pt-4 pb-0" cols="12" lg="12">
+              <v-text-field
+                v-model="createFields.createdAt.value"
+                :label="createFields.createdAt.label"
+                disabled
+                outlined
+              ></v-text-field>
+            </v-col>
+            <v-col class="pb-0" cols="12" lg="12">
+              <v-text-field
+                v-model="createFields.paymentStatus.value"
+                :label="createFields.paymentStatus.label"
+                disabled
+                outlined
+              />
+            </v-col>
+            <v-col class="pb-0" cols="12">
+              <v-text-field
+                v-model="createFields.amount.value"
+                :label="createFields.amount.label"
+                disabled
+                outlined
+              ></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row v-for="(item, index) in transactionDetails" :key="index">
+            <v-col cols="12"><h3>Details Produk</h3></v-col>
+            <v-col class="pb-0" cols="4">
+              <v-text-field
+                v-model="item.product.name"
+                label="Nama Produk"
+                disabled
+                outlined
+              ></v-text-field>
+            </v-col>
+            <v-col class="pb-0" cols="4">
+              <v-text-field
+                v-model="item.product.price"
+                label="Price"
+                disabled
+                outlined
+              ></v-text-field>
+            </v-col>
+            <v-col class="pb-0" cols="4">
+              <v-text-field
+                v-model="item.quantity"
+                :label="createFields.quantity.label"
+                disabled
+                outlined
+              ></v-text-field>
+            </v-col>
+          </v-row>
+        </v-form>
+      </v-card-text>
 
       <v-card-actions>
         <v-spacer />
@@ -43,9 +136,9 @@ export default Vue.extend({
   props: ['refresh', 'createFields'],
   data: () => ({
     isOpen: false,
-    id: '',
+    transactionId: '',
+    transactionDetails: [] as any,
     type: '',
-    title: '',
   }),
 
   computed: {
@@ -62,16 +155,10 @@ export default Vue.extend({
         }
       },
     },
-    type: {
-      async handler() {
-        this.title = this.type[0].toUpperCase() + this.type.substring(1);
-      },
-    },
   },
 
   async created() {
     this.setLoading(true);
-    this.fetchUser();
     this.setLoading(false);
   },
 
@@ -81,90 +168,68 @@ export default Vue.extend({
     async startForm(item, type: string) {
       this.isOpen = true;
       this.type = type;
-      this.title = type[0].toUpperCase() + type.substring(1);
       if (type !== 'create') {
         this.fillForm(item);
-        this.id = item.id;
+        this.transactionId = item.id;
       }
     },
 
     fillForm(item: any) {
       if (!item) return;
       const {
-        name,
-        releaseDate,
-        quantity,
-        category,
-        description,
-        totalAmount,
+        status,
+        receiptNumber,
         user,
+        createdAt,
+        payment,
+        transactionDetails,
       } = item;
       const dataObj = {
-        name,
-        releaseDate,
-        quantity,
-        category,
-        description,
-        totalAmount,
-        user: user.id,
+        status,
+        receiptNumber,
+        nama: user.name,
+        address: user.address,
+        createdAt,
+        amount: payment.amount,
+        paymentStatus: payment.status,
+        transactionDetails,
       };
 
       const keys = Object.keys(dataObj);
       for (let i = 0; i < keys.length; i += 1) {
         const key = keys[i];
-        this.createFields[key].value = dataObj[key];
+        switch (key) {
+          case 'transactionDetails':
+            this.transactionDetails = dataObj[key];
+            break;
+          case 'createdAt':
+            this.createFields[key].value = this.formatDate(dataObj[key]);
+            break;
+          case 'amount':
+            this.createFields[key].value = this.formatCurrency(dataObj[key]);
+            break;
+          default:
+            this.createFields[key].value = dataObj[key];
+        }
       }
-      this.formatDatePicker(this.createFields.releaseDate);
-    },
-
-    onButtonClick(label) {
-      (this.$refs[label] as Vue & { click: () => void }).click();
     },
 
     async setupPayload() {
       const payload = {
-        name: this.createFields.name.value,
-        releaseDate: this.createFields.releaseDate.value,
-        description: this.createFields.description.value,
-        category: this.createFields.category.value,
-        userId: this.createFields.user.value,
-        quantity: Number(this.createFields.quantity.value),
-        totalAmount: Number(this.createFields.totalAmount.value),
+        status: this.createFields.status.value,
+        receipNumber: this.createFields.receiptNumber.value,
       };
       return payload;
-    },
-
-    async fetchUser() {
-      this.setLoading(true);
-      try {
-        const service = new BaseService('/users');
-        const res = await service.get('');
-        this.createFields.user.items = res.data.filter(
-          (item) => item.role !== 0
-        );
-      } catch (e) {
-        this.setSnackbar({
-          isVisible: true,
-          message: e,
-          color: 'error',
-        });
-      } finally {
-        this.setLoading(false);
-      }
     },
 
     async save() {
       try {
         if (!this.validate()) return;
         this.setLoading(true);
-        const service = new BaseService('/expenses');
+        const service = new BaseService('/transactions');
         // Prepare payload
         const payload = await this.setupPayload();
-        if (this.type === 'create') {
-          await service.post(payload);
-        } else {
-          await service.put(this.id, payload);
-        }
+        await service.put(this.transactionId, payload);
 
         this.refresh();
         this.isOpen = false;
@@ -180,6 +245,16 @@ export default Vue.extend({
         });
       }
     },
+
+    formatCurrency(value) {
+      const formatter = new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumSignificantDigits: 1,
+      });
+      return formatter.format(value);
+    },
+
     validate() {
       return (
         this.$refs.form as Vue & {
@@ -188,9 +263,8 @@ export default Vue.extend({
       ).validate();
     },
 
-    formatDatePicker(field) {
-      field.formatted = moment(field.value).format('DD-MM-YYYY');
-      field.showModal = false;
+    formatDate(date) {
+      return moment(date).format('DD-MM-YYYY');
     },
   },
 });
