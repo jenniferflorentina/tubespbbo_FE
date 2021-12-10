@@ -42,7 +42,7 @@
     </v-list>
     <template v-slot:append>
         <v-list expand nav>
-          <v-list-item class="my-2">
+          <v-list-item class="my-2" @click="onClickHandler()">
             <v-list-item-icon>
               <v-icon color="white">mdi-logout</v-icon>
             </v-list-item-icon>
@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters, mapActions } from 'vuex';
 import BaseItemGroup from '@/components/sidebarItems/BaseItemGroup.vue';
 import BaseItem from '@/components/sidebarItems/BaseItem.vue';
 import VerticalSidebarItems from './SidebarItems';
@@ -87,6 +87,13 @@ export default {
     },
     
   },
+  methods:{
+    ...mapActions(['signOut']),
+    onClickHandler() {
+      this.signOut();
+      this.$router.push('/');
+    },
+  }
 };
 </script>
 <style lang="scss" scoped>
