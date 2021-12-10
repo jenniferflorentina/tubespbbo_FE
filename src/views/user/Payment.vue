@@ -17,17 +17,31 @@
       <v-card-text class="mb-4 mt-8">
         <v-form class="px-4" ref="form" @submit.prevent="save()">
           <v-row class="mt-2" align="center" justify="center">
-            <v-col cols="6" lg="12">
-              <v-row
+            <v-col cols="6">
+              <v-card
                 class="pb-0"
                 v-for="(item, index) in items.transactionDetails"
                 :key="index"
               >
                 <v-card-title>{{ item.product.name }}</v-card-title>
-                <v-card-text>{{ item.product.price }}</v-card-text>
-              </v-row>
+                <v-row>
+                  <v-col cols="4">
+                    <v-card-text>{{
+                      formatCurrency(item.product.price)
+                    }}</v-card-text>
+                  </v-col>
+                  <v-col cols="3">
+                    <v-card-text>x {{ item.quantity }}</v-card-text>
+                  </v-col>
+                  <v-col cols="5">
+                    <v-card-text
+                      >= {{ formatCurrency(subTotal(item)) }}</v-card-text
+                    >
+                  </v-col>
+                </v-row>
+              </v-card>
             </v-col>
-            <v-col cols="6">
+            <v-col cols="6" justify="start">
               <v-row class="pb-0">
                 <v-text-field
                   v-model="createFields.address.value"
@@ -58,16 +72,32 @@
                   clearable
                 />
               </v-row>
+              <v-row class="pb-0">
+                <v-text-field
+                  v-model="createFields.accountNumber.value"
+                  :items="createFields.accountNumber.items"
+                  :label="createFields.accountNumber.label"
+                  :rules="createFields.accountNumber.rules"
+                  prepend-icon="mdi-card-account-details"
+                  clearable
+                >
+                </v-text-field>
+              </v-row>
+              <v-row justify="end">
+                <v-card-title
+                  >Total Bayar : {{ formatCurrency(amount) }}</v-card-title
+                >
+              </v-row>
             </v-col>
           </v-row>
         </v-form>
       </v-card-text>
-
       <v-card-actions>
         <v-spacer />
-        <v-btn outlined large>Bayar</v-btn>
+        <v-btn outlined large @click="save()">Bayar</v-btn>
       </v-card-actions>
     </v-card>
+    <PopUp ref="PopUp" />
   </v-dialog>
 </template>
 
@@ -75,16 +105,19 @@
 import Vue from 'vue';
 import { mapActions, mapGetters } from 'vuex';
 import BaseService from '@/services/Base';
+import PopUp from '@/views/user/PaymentSuccessDialog.vue';
 
 export default Vue.extend({
   name: 'PaymentDialog',
   props: ['formatCurrency'],
+  components: { PopUp },
   data: () => ({
     isOpen: false,
     type: 'create',
     id: '',
-    items: [] as any[],
+    items: {} as any,
     service: new BaseService(),
+    amount: 0,
     createFields: {
       address: {
         label: 'Alamat Pengiriman',
@@ -110,12 +143,18 @@ export default Vue.extend({
         value: '',
         rules: [],
       },
+      accountNumber: {
+        label: 'Account Number',
+        type: 'string',
+        value: '',
+        rules: [],
+      },
     },
   }),
 
   async created() {
     this.setLoading(true);
-    this.fetchDataPayment();
+    await this.fetchDataPayment();
     this.setLoading(false);
   },
   computed: {
@@ -127,6 +166,7 @@ export default Vue.extend({
       this.isOpen = true;
       this.type = type;
       this.id = id;
+      this.fetchTransactions();
     },
 
     async fetchDataPayment() {
@@ -135,6 +175,69 @@ export default Vue.extend({
       this.createFields.payments.items = res.data;
       this.createFields.address.value = this.authenticatedUser.address;
       this.$forceUpdate();
+    },
+
+    async fetchTransactions() {
+      const service = new BaseService('/transactions');
+      const res = await service.getOne(this.id);
+      this.items = res.data;
+      this.totalAmount();
+      this.$forceUpdate();
+    },
+
+    subTotal(item) {
+      let result = 0;
+      result = item.product.price * item.quantity;
+      return result;
+    },
+
+    totalAmount() {
+      for (
+        let index = 0;
+        index < this.items.transactionDetails.length;
+        index += 1
+      ) {
+        const element = this.items.transactionDetails[index];
+        this.amount += element.product.price * element.quantity;
+      }
+    },
+
+    async setupPayload() {
+      const payload = {
+        paymentMethodId: this.createFields.payments.value,
+        transactionId: this.id,
+        accountNumber: this.createFields.accountNumber.value,
+        amount: this.amount,
+      };
+      return payload;
+    },
+
+    async save() {
+      try {
+        if (!this.validate()) return;
+        this.setLoading(true);
+        const service = new BaseService('/payments');
+        // Prepare payload
+        const payload = await this.setupPayload();
+        await service.post(payload);
+        this.isOpen = false;
+        this.openPopUp();
+        this.setLoading(false);
+        (this.$refs.form as Vue & { reset: () => void }).reset();
+      } catch (e) {
+        this.isOpen = false;
+        this.setLoading(false);
+        this.setSnackbar({
+          isVisible: true,
+          message: e,
+          color: 'error',
+        });
+      }
+    },
+
+    openPopUp() {
+      const { PopUp }: any = this.$refs;
+      PopUp.startComment();
     },
 
     validate() {

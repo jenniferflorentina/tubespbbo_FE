@@ -12,7 +12,7 @@
         <v-btn
           class="mx-2"
           small
-          v-if="type === 'detail'"
+          v-if="type === 'detail' && status === 'Belum Terverifikasi'"
           @click="type = 'edit'"
         >
           <v-icon small color="black">mdi-pencil</v-icon>
@@ -83,6 +83,23 @@
                 }}</v-card-title>
               </v-col>
             </v-row>
+            <v-col class="pb-0" cols="6">
+              <v-text-field
+                v-model="createFields.accountNumber.value"
+                :label="createFields.accountNumber.label"
+                :rules="createFields.accountNumber.rules"
+                :disabled="isFormDisabled"
+                outlined
+              ></v-text-field>
+            </v-col>
+            <v-col class="pb-0" cols="6">
+              <v-text-field
+                v-model="amount"
+                label="Total Amount"
+                readonly
+                outlined
+              ></v-text-field>
+            </v-col>
           </v-row>
         </v-form>
       </v-card-text>
@@ -90,7 +107,7 @@
       <v-card-actions>
         <v-spacer />
         <v-btn v-if="type !== 'detail'" color="primary" @click="save()"
-          >Save</v-btn
+          >Bayar</v-btn
         >
       </v-card-actions>
     </v-card>
@@ -111,6 +128,8 @@ export default Vue.extend({
     id: '',
     type: '',
     transactionDetails: [] as any,
+    amount: 0,
+    status: '',
     createFields: {
       createdAt: {
         label: 'Transaction Date',
@@ -149,6 +168,12 @@ export default Vue.extend({
         value: '',
         rules: [],
       },
+      accountNumber: {
+        label: 'Account Number',
+        type: 'string',
+        value: '',
+        rules: [],
+      },
     },
   }),
 
@@ -184,6 +209,7 @@ export default Vue.extend({
       if (type !== 'create') {
         this.fillForm(item);
         this.id = item.id;
+        this.status = item.status;
       }
     },
 
@@ -194,6 +220,7 @@ export default Vue.extend({
         createdAt,
         paymentMethod: payment.paymentMethodId,
         product: transactionDetails,
+        accountNumber: payment.accountNumber,
       };
 
       const keys = Object.keys(dataObj);
@@ -210,6 +237,7 @@ export default Vue.extend({
             this.createFields[key].value = dataObj[key];
         }
       }
+      this.totalAmount();
     },
 
     async fetchDataPayment() {
@@ -225,15 +253,24 @@ export default Vue.extend({
       return result;
     },
 
+    totalAmount() {
+      // eslint-disable-next-line no-plusplus
+      for (let index = 0; index < this.transactionDetails.length; index++) {
+        const element = this.transactionDetails[index];
+        this.amount += element.product.price * element.quantity;
+      }
+    },
+
     onButtonClick(label) {
       (this.$refs[label] as Vue & { click: () => void }).click();
     },
 
     async setupPayload() {
       const payload = {
-        paymentMethod: this.createFields.paymentMethod.value,
+        paymentMethodId: this.createFields.paymentMethod.value,
         transactionId: this.id,
-        amount: Number(),
+        accountNumber: this.createFields.accountNumber.value,
+        amount: this.amount,
       };
       return payload;
     },
@@ -242,15 +279,10 @@ export default Vue.extend({
       try {
         if (!this.validate()) return;
         this.setLoading(true);
-        const service = new BaseService('/expenses');
+        const service = new BaseService('/payments');
         // Prepare payload
         const payload = await this.setupPayload();
-        if (this.type === 'create') {
-          await service.post(payload);
-        } else {
-          await service.put(this.id, payload);
-        }
-
+        await service.post(payload);
         this.refresh();
         this.isOpen = false;
         this.setLoading(false);
@@ -265,6 +297,7 @@ export default Vue.extend({
         });
       }
     },
+
     validate() {
       return (
         this.$refs.form as Vue & {

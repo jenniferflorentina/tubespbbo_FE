@@ -203,7 +203,10 @@ export default Vue.extend({
           break;
         case 2:
           this.items = res.data
-            .filter((item) => item.status === 'Dikemas')
+            .filter(
+              (item) =>
+                item.status === 'Dikemas' || item.status === 'Belum Proses'
+            )
             .reverse();
           break;
         case 3:
