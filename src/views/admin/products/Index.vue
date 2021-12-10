@@ -28,6 +28,13 @@
       >
         <div>
           <v-img
+            v-if="item.ImageUrl !== ''"
+            height="200"
+            :src="item.ImageUrl"
+            @error="item.ImageUrl = 'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
+          ></v-img>
+          <v-img
+            v-else
             height="200"
             src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
           ></v-img>

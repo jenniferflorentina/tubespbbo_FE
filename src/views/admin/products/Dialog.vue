@@ -53,8 +53,31 @@
             </v-col>
           </v-row>
           <v-row align="start" justify="center">
-            <v-col cols=4>
+              <input
+                ref="Document"
+                class="d-none"
+                type="file"
+                accept="image/*"
+                @change="
+                  (e) => {
+                    fileInput = e.target.files[0];
+                    onPickedImage(e.target.value);
+                  }
+                "
+              />
+            <v-col cols=4  @click="onImageClick()">
+              <v-img v-if="url" max-width="250"
+                height="250" :src="url" />
+              <v-img 
+                v-else-if="createFields.imageurl.value !== ''" 
+                max-width="250"
+                height="250" 
+                :src="createFields.imageurl.value"
+                @error="createFields.imageurl.value = 'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
+                >
+              </v-img>
               <v-img
+                v-else
                 max-width="250"
                 height="250"
                 src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
@@ -113,6 +136,9 @@ export default Vue.extend({
     id: '',
     type: '',
     title: '',
+    fileInput: null as any,
+    url: null as any,
+    path: '' as any,
   }),
 
   computed: {
@@ -125,6 +151,7 @@ export default Vue.extend({
     isOpen: {
       async handler() {
         if (this.isOpen === false) {
+          this.url = null;
           (this.$refs.form as Vue & { reset: () => void }).reset();
         }
       },
@@ -160,7 +187,7 @@ export default Vue.extend({
         name,
         code,
         quantity,
-        imageurl,
+        ImageUrl,
         description,
         price,
       } = item;
@@ -168,7 +195,7 @@ export default Vue.extend({
         name,
         code,
         quantity,
-        imageurl,
+        imageurl: ImageUrl,
         description,
         price,
       };
@@ -189,7 +216,7 @@ export default Vue.extend({
         name: this.createFields.name.value,
         code: this.createFields.code.value,
         description: this.createFields.description.value,
-        imageurl: 'test',
+        imageurl: URL.createObjectURL(this.fileInput),
         quantity: Number(this.createFields.quantity.value),
         price: Number(this.createFields.price.value),
       };
@@ -229,6 +256,19 @@ export default Vue.extend({
           validate: () => boolean;
         }
       ).validate();
+    },
+    onImageClick() {
+      const { Document } = this.$refs as any;
+      Document.click();
+    },
+    onPickedImage(e) {
+      const formData = new FormData();
+
+      formData.append('file', this.fileInput);
+      this.url = URL.createObjectURL(this.fileInput)
+      this.path = e;
+
+
     },
   },
 });

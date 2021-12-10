@@ -9,6 +9,13 @@
         :key="index"
       >
         <v-img
+          v-if="item.ImageUrl !== ''"
+          height="250"
+          :src="item.ImageUrl"
+          @error="item.ImageUrl = 'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
+        ></v-img>
+        <v-img
+          v-else
           height="250"
           src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
         ></v-img>
