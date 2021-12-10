@@ -1,5 +1,6 @@
 <template>
   <v-app-bar :color="navbarColor" dense app clipped-left clipped-right>
+    <h2 class="font-weight-bold">CF.</h2>
     <div>
       <v-btn text>Bunga</v-btn>
       <v-btn text>Bibit Bunga</v-btn>

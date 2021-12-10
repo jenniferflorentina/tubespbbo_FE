@@ -7,7 +7,7 @@
   >
     <v-card class="pb-4">
       <v-toolbar class="px-4">
-        <v-toolbar-title>{{title}} Product</v-toolbar-title>
+        <v-toolbar-title>{{ title }} Product</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn
           class="mx-2"
@@ -53,28 +53,30 @@
             </v-col>
           </v-row>
           <v-row align="start" justify="center">
-              <input
-                ref="Document"
-                class="d-none"
-                type="file"
-                accept="image/*"
-                @change="
-                  (e) => {
-                    fileInput = e.target.files[0];
-                    onPickedImage(e.target.value);
-                  }
-                "
-              />
-            <v-col cols=4  @click="onImageClick()">
-              <v-img v-if="url" max-width="250"
-                height="250" :src="url" />
-              <v-img 
-                v-else-if="createFields.imageurl.value !== ''" 
+            <input
+              ref="Document"
+              class="d-none"
+              type="file"
+              accept="image/*"
+              @change="
+                (e) => {
+                  fileInput = e.target.files[0];
+                  onPickedImage(e.target.value);
+                }
+              "
+            />
+            <v-col cols="4" @click="onImageClick()">
+              <v-img v-if="url" max-width="250" height="250" :src="url" />
+              <v-img
+                v-else-if="createFields.imageurl.value !== ''"
                 max-width="250"
-                height="250" 
+                height="250"
                 :src="createFields.imageurl.value"
-                @error="createFields.imageurl.value = 'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
-                >
+                @error="
+                  createFields.imageurl.value =
+                    'https://cdn.vuetifyjs.com/images/cards/cooking.png'
+                "
+              >
               </v-img>
               <v-img
                 v-else
@@ -84,7 +86,7 @@
               ></v-img>
             </v-col>
             <v-col class="pb-0" cols="8">
-               <v-row align="end" justify="end">
+              <v-row align="end" justify="end">
                 <v-col class="pb-0" cols="12">
                   <v-text-field
                     type="number"
@@ -96,7 +98,7 @@
                   ></v-text-field>
                 </v-col>
               </v-row>
-               <v-row align="end" justify="end">
+              <v-row align="end" justify="end">
                 <v-col class="pb-0" cols="12">
                   <v-text-field
                     type="number"
@@ -156,11 +158,11 @@ export default Vue.extend({
         }
       },
     },
-    type:{
-      async handler(){
+    type: {
+      async handler() {
         this.title = this.type[0].toUpperCase() + this.type.substring(1);
-      }
-    }
+      },
+    },
   },
 
   async created() {
@@ -171,7 +173,7 @@ export default Vue.extend({
   methods: {
     ...mapActions(['setLoading', 'setSnackbar']),
 
-    async startForm(item, type : string) {
+    async startForm(item, type: string) {
       this.isOpen = true;
       this.type = type;
       this.title = type[0].toUpperCase() + type.substring(1);
@@ -183,14 +185,7 @@ export default Vue.extend({
 
     fillForm(item: any) {
       if (!item) return;
-      const {
-        name,
-        code,
-        quantity,
-        ImageUrl,
-        description,
-        price,
-      } = item;
+      const { name, code, quantity, ImageUrl, description, price } = item;
       const dataObj = {
         name,
         code,
@@ -216,7 +211,7 @@ export default Vue.extend({
         name: this.createFields.name.value,
         code: this.createFields.code.value,
         description: this.createFields.description.value,
-        imageurl: URL.createObjectURL(this.fileInput),
+        imageurl: this.fileInput ? URL.createObjectURL(this.fileInput) : '',
         quantity: Number(this.createFields.quantity.value),
         price: Number(this.createFields.price.value),
       };
@@ -265,10 +260,8 @@ export default Vue.extend({
       const formData = new FormData();
 
       formData.append('file', this.fileInput);
-      this.url = URL.createObjectURL(this.fileInput)
+      this.url = URL.createObjectURL(this.fileInput);
       this.path = e;
-
-
     },
   },
 });

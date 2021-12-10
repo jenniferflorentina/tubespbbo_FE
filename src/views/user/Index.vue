@@ -1,6 +1,11 @@
 <template>
   <div>
-    <v-btn style="float: right" class="mr-3" @click="openShoppingCart()">
+    <v-btn
+      style="float: right"
+      class="mr-3"
+      color="primary"
+      @click="openShoppingCart()"
+    >
       <v-icon>mdi-cart</v-icon>
     </v-btn>
     <v-container fill-height>
@@ -14,7 +19,9 @@
           v-if="item.ImageUrl !== ''"
           height="250"
           :src="item.ImageUrl"
-          @error="item.ImageUrl = 'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
+          @error="
+            item.ImageUrl = 'https://cdn.vuetifyjs.com/images/cards/cooking.png'
+          "
         ></v-img>
         <v-img
           v-else
@@ -136,7 +143,7 @@ export default Vue.extend({
       this.setLoading(true);
       const service = new BaseService('/products');
       const res = await service.get(params);
-      this.items = res.data;
+      this.items = res.data.filter((item) => item.quantity > 0);
       this.$forceUpdate();
     },
 

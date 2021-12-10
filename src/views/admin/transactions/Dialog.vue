@@ -89,7 +89,7 @@
             <v-col cols="12"><h3>Details Produk</h3></v-col>
             <v-col class="pb-0" cols="4">
               <v-text-field
-                v-model="item.product.name"
+                :value="item.product.name"
                 label="Nama Produk"
                 disabled
                 outlined
@@ -97,7 +97,7 @@
             </v-col>
             <v-col class="pb-0" cols="4">
               <v-text-field
-                v-model="item.product.price"
+                :value="item.product.price"
                 label="Price"
                 disabled
                 outlined
@@ -144,16 +144,6 @@ export default Vue.extend({
   computed: {
     isFormDisabled(): boolean {
       return this.type === 'detail';
-    },
-  },
-
-  watch: {
-    isOpen: {
-      async handler() {
-        if (this.isOpen === false) {
-          (this.$refs.form as Vue & { reset: () => void }).reset();
-        }
-      },
     },
   },
 

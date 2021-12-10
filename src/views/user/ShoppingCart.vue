@@ -43,7 +43,7 @@
                   <v-col cols="3">
                     <v-card-actions>
                       <v-btn
-                        v-if="item.quantity > 0"
+                        v-if="item.quantity > 1"
                         class="my-4"
                         fab
                         icon

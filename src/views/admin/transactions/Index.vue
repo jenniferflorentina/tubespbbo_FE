@@ -24,7 +24,7 @@
                 </v-avatar>
               </v-col>
               <v-col cols="2" align-self="center" class="text-h6">
-                {{ item.userId }}
+                {{ item.user.name }}
               </v-col>
               <v-col cols="3.5" align-self="center" class="text-h6">
                 <v-icon>mdi-calendar</v-icon>
