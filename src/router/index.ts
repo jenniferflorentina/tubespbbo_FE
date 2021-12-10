@@ -10,6 +10,7 @@ import User from '@/components/layouts/full-layout-user/Layout.vue';
 
 import Login from '@/views/LoginPage.vue';
 import Register from '@/views/Register.vue';
+import History from '@/views/user/history/Index.vue';
 
 // views without layouts
 import LandingPage from '@/views/Landing.vue';
@@ -39,7 +40,7 @@ const routes: Array<RouteConfig> = [
         path: '/admin/transactions',
         component: () =>
           import(
-            /* webpackChunkName: "adminIndex" */ '@/views/admin/transactions/Index.vue'
+            /* webpackChunkName: "adminTransactions" */ '@/views/admin/transactions/Index.vue'
           ),
       },
       {
@@ -53,7 +54,7 @@ const routes: Array<RouteConfig> = [
         path: '/admin/reports',
         component: () =>
           import(
-            /* webpackChunkName: "adminProducts" */ '@/views/admin/reports/Index.vue'
+            /* webpackChunkName: "adminReports" */ '@/views/admin/reports/Index.vue'
           ),
       },
     ],
@@ -65,9 +66,13 @@ const routes: Array<RouteConfig> = [
       {
         path: '/user/index',
         component: () =>
-          import(/* webpackChunkName: "adminIndex" */ '@/views/user/Index.vue'),
+          import(/* webpackChunkName: "userIndex" */ '@/views/user/Index.vue'),
       },
     ],
+  },
+  {
+    path: '/history',
+    component: History,
   },
   {
     path: '/login',

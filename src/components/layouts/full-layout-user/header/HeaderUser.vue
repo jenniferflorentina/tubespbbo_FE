@@ -86,12 +86,12 @@ export default {
     userprofile: [
       {
         icon: 'mdi-history',
-        title: 'Pesanan',
-        to: '/user/index',
+        title: 'History Pesanan',
+        to: '/history',
       },
       {
         icon: 'mdi-logout',
-        title: 'Sign Out',
+        title: 'Logout',
         to: '/',
       },
     ],
@@ -109,7 +109,7 @@ export default {
     },
 
     onClickHandler({ title, to }) {
-      if (title === 'Sign Out') {
+      if (title === 'Logout') {
         this.signOut();
       }
       this.$router.push(to);
