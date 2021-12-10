@@ -32,9 +32,9 @@
                   />
                 </v-avatar>
               </v-col>
-              <v-col cols="2">
+              <v-col cols="4">
                 <v-card-text>
-                  {{ item.userId }}
+                  {{ item.user.name }}
                 </v-card-text>
               </v-col>
               <v-col align-self="center">
@@ -74,10 +74,15 @@ export default Vue.extend({
   data: () => ({
     // Data General,
     items: [] as any[],
-    tabItems: ['Selesai', 'Proses', 'Belum Proses', 'Belum Terverifikasi'],
+    tabItems: [
+      'Selesai',
+      'Dikirim',
+      'Dikemas',
+      'Belum Proses',
+      'Belum Terverifikasi',
+    ],
     tab: 0,
     service: new BaseService(),
-    user: [] as any[],
   }),
 
   async created() {
@@ -110,14 +115,17 @@ export default Vue.extend({
       const res = await service.get(params);
       switch (this.tab) {
         case 1:
-          this.items = res.data.filter((item) => item.status === 'Proses');
+          this.items = res.data.filter((item) => item.status === 'Dikirim');
           break;
         case 2:
+          this.items = res.data.filter((item) => item.status === 'Dikemas');
+          break;
+        case 3:
           this.items = res.data.filter(
             (item) => item.status === 'Belum Proses'
           );
           break;
-        case 3:
+        case 4:
           this.items = res.data.filter(
             (item) => item.status === 'Belum Terverifikasi'
           );

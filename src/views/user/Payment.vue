@@ -115,7 +115,6 @@ export default Vue.extend({
 
   async created() {
     this.setLoading(true);
-    this.fetchAddress();
     this.fetchDataPayment();
     this.setLoading(false);
   },
@@ -134,22 +133,8 @@ export default Vue.extend({
       const service = new BaseService('/payment-methods');
       const res = await service.get('');
       this.createFields.payments.items = res.data;
+      this.createFields.address.value = this.authenticatedUser.address;
       this.$forceUpdate();
-    },
-
-    async fetchAddress() {
-      this.setLoading(true);
-      try {
-        this.createFields.address.value = this.authenticatedUser.address;
-      } catch (e) {
-        this.setSnackbar({
-          isVisible: true,
-          message: e,
-          color: 'error',
-        });
-      } finally {
-        this.setLoading(false);
-      }
     },
 
     validate() {
