@@ -203,7 +203,7 @@ export default Vue.extend({
         const payload = await this.setupPayload();
         if (this.type === 'create') {
           const res = await service.post(payload);
-          this.transaksiId = res.data.transaksiId;
+          this.transaksiId = res.data.Id;
         }
         this.refresh();
         this.isOpen = false;
