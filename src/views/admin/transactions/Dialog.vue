@@ -217,7 +217,7 @@ export default Vue.extend({
     async setupPayload() {
       const payload = {
         status: this.createFields.status.value,
-        receipNumber: this.createFields.receiptNumber.value,
+        receiptNumber: this.createFields.receiptNumber.value,
       };
       return payload;
     },

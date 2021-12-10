@@ -23,12 +23,15 @@
                   />
                 </v-avatar>
               </v-col>
-              <v-col cols="2.5" align-self="center" class="text-h6">
+              <v-col cols="2" align-self="center" class="text-h6">
                 {{ item.userId }}
               </v-col>
-              <v-col cols="5" align-self="center" class="text-h6">
+              <v-col cols="3.5" align-self="center" class="text-h6">
                 <v-icon>mdi-calendar</v-icon>
                 {{ formatDate(item.createdAt) }}
+              </v-col>
+              <v-col cols="2.5" align-self="center" class="text-h6">
+                {{ item.receiptNumber }}
               </v-col>
               <v-col cols="3" align-content-center justify="end">
                 <v-row>
