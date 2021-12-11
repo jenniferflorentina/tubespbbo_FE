@@ -83,7 +83,9 @@
 
       <v-card-actions>
         <v-spacer />
-        <v-btn outlined large @click="save()">Bayar</v-btn>
+        <v-btn outlined large @click="save()" v-if="items.length > 0"
+          >Bayar</v-btn
+        >
       </v-card-actions>
     </v-card>
     <DeleteDialog ref="deleteMainDialog" />
